@@ -6,14 +6,14 @@ import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
   return (
-    <>
-      <Header />
-      <div className='container'>
-        <Sidebar />
+    <div className="container">
+      <Sidebar />
+      <div className='contents'>
+        <Header />
         <Body />
+        <Footer />
       </div>
-      <Footer />
-    </>
+    </div>
   );
 }
 
