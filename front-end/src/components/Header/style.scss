@@ -1,4 +1,55 @@
 header {
+  display: flex;
   width: 1000px;
-  background-color: rgba(235,235,235,1);
+  .search {
+
+    input[type=search] {
+      height: 35px;
+      width: 200px;
+      box-sizing: border-box;
+      border: 1px solid #E9ECEF;
+      border-radius: 4px;
+      margin: 20px auto 20px 65px;
+    }
+  }
+  .contentBox {
+    display: flex;
+    height: 45px;
+    margin: 15px 65px 15px auto;
+    > img {
+      &:first-of-type {
+        max-width: 30px;
+        margin: 7.5px;
+      }
+      &:nth-child(2) {
+        max-width: 20px;
+        margin: 12.5px;
+      }
+      &:nth-child(3) {
+        max-width: 20px;
+        margin: 12.5px;
+      }
+    }
+    &__profile {
+      display: flex;
+      img {
+        max-width: 45px;
+        border-radius: 30px;
+      }
+      &__text {
+        span {
+          display: block;
+          padding: 0 16px;
+          &:first-of-type {
+            line-height: 28px;
+          }
+          &:nth-child(2) {
+            font-size: 1.3rem;
+            line-height: 17px;
+            color: rgba(138, 146, 166, 1);
+          }
+        }
+      }
+    }
+  }
 }
