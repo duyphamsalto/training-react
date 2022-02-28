@@ -1,0 +1,32 @@
+@import "components/variable/variable.scss";
+
+.SideSectionItem {
+  list-style: none;
+  a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+  }
+  &:hover {
+    background: lighten(#c4ccf8, 5%);
+    color: #3a57e8;
+  }
+  &[data-flag="active"] {
+    background: #c4ccf8;
+    color: #3a57e8;
+  }
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  p {
+    margin: 0 0 0 2rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}

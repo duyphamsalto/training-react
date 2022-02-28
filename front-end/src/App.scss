@@ -1,0 +1,27 @@
+@import "components/variable/variable.scss";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1rem;
+  background: #f4f4f4;
+  font-family: $primaryFont;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+}
+.container {
+  display: flex;
+  &-inner {
+    width: 100%;
+  }
+}

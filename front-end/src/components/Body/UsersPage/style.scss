@@ -1,0 +1,36 @@
+@import "components/variable/variable.scss";
+
+.UsersPage {
+  background: #fff;
+  padding: 1rem;
+  table {
+    width: 100%;
+    border: 1px solid #e9ecef;
+    border-spacing: 0;
+    font-size: 1.4rem;
+  }
+  td {
+    padding: 2px;
+  }
+  th {
+    background: #fff;
+    border-bottom: 2px solid #000;
+    &:not(:first-child) {
+      border-left: 1px solid #e9ecef;
+      text-align: left;
+      padding: 0.5rem 1rem;
+    }
+  }
+  td {
+    border-bottom: 1px solid #e9ecef;
+    &:not(:first-child) {
+      border-left: 1px solid #e9ecef;
+    }
+  }
+  tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  tr:nth-child(even) {
+    background: #fff;
+  }
+}

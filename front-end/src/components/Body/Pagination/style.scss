@@ -1,0 +1,35 @@
+@import "components/variable/variable.scss";
+
+.Pagenation {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  .UsersPage + & {
+    background: #fff;
+  }
+  &-inner {
+    background: #fff;
+    color: #0d6efd;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin: 0 1rem;
+    padding: 0.5rem 0rem;
+    > * {
+      padding: 1rem 0.75rem;
+      border-right: 1px solid #dee2e6;
+      &:last-child {
+        border-right: none;
+      }
+      &:hover:not(.while, .current) {
+        background-color: #c4ccf8;
+      }
+    }
+    span {
+      &.current {
+        color: #fff;
+        background: #0d6efd;
+      }
+    }
+  }
+}
