@@ -1,8 +1,8 @@
 header {
   display: flex;
   width: 1000px;
+  backdrop-filter: blur(64px);
   .search {
-
     input[type=search] {
       height: 35px;
       width: 200px;
