@@ -9,7 +9,7 @@ export default function Header() {
     <header>
       <div className="left">
         <img src={logo} alt="" />
-        <div class="search_box">
+        <div className="search_box">
           <input
             placeholder="Search..."
             type="search"

@@ -8,8 +8,8 @@ export default function SideSection(props) {
       <div className="side-section">
         <p>{props.secTitle}</p>
         <ul>
-          {props.items.map((item) => {
-            return <SideSectionItem item={item}></SideSectionItem>;
+          {props.items.map((item, index) => {
+            return <SideSectionItem key={index} item={item}></SideSectionItem>;
           })}
         </ul>
       </div>

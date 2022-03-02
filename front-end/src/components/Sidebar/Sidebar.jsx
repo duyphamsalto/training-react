@@ -4,9 +4,9 @@ import "./style.scss";
 
 export default function Sidebar() {
   const itemsList = [
-    { title: "", items: ["Dashboard"] },
-    { title: "main", items: ["Users", "Posts", "Categories"] },
-    { title: "settings", items: ["Profile", "Roles", "Maps"] },
+    { id: 1, title: "", items: ["Dashboard"] },
+    { id: 2, title: "main", items: ["Users", "Posts", "Categories"] },
+    { id: 3, title: "settings", items: ["Profile", "Roles", "Maps"] },
   ];
 
   return (
@@ -14,7 +14,11 @@ export default function Sidebar() {
       <div className="sid-sections">
         {itemsList.map((item) => {
           return (
-            <SideSection secTitle={item.title} items={item.items}></SideSection>
+            <SideSection
+              key={item.id}
+              secTitle={item.title}
+              items={item.items}
+            ></SideSection>
           );
         })}
       </div>

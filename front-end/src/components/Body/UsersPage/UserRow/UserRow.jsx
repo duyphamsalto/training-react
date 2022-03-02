@@ -2,11 +2,6 @@ import React from "react";
 import "./style.scss";
 import icon from "asset/row-icon.png";
 
-function is_status(bool) {
-  if (bool) return "Active";
-  else return "Un active";
-}
-
 const UserRow = (props) => {
   return (
     <>
@@ -19,7 +14,7 @@ const UserRow = (props) => {
         </td>
         <td>{props.name}</td>
         <td>{props.email}</td>
-        <td>{is_status(props.status)}</td>
+        <td>{props.status ? "Active" : "Un active"}</td>
         <td>
           <a href={`/id_${props.id}/publich`}>Publich</a>
           <a href={`/id_${props.id}/edit`}>Edit</a>

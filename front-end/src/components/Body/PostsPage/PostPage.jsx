@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.scss";
 import Card from "./Card/Card";
+
+// useEffect(() => {
+// 		getCardData();
+// }, []);
 
 const cards = [
   {
@@ -84,7 +88,7 @@ const PostPage = () => {
         {cards.map((card) => {
           return (
             <Card
-              id={card.id}
+              key={card.id}
               title={card.title}
               fileName={card.fileName}
               desc={card.desc}

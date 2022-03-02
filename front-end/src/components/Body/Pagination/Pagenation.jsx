@@ -26,6 +26,7 @@ function getPagenationArr(c, m) {
 
 const Pagenation = (props) => {
   const arr = getPagenationArr(props.current, 20);
+
   return (
     <>
       <div className="Pagenation">
@@ -34,11 +35,21 @@ const Pagenation = (props) => {
           <a href={`/demo/page${props.current - 1}`}>
             <span>&lt;</span>
           </a>
-          {arr.map((i) => {
-            if (i === props.current) return <span class="current">{i}</span>;
-            if (typeof i === "string") return <span class="while">{i}</span>;
+          {arr.map((i, index) => {
+            if (i === props.current)
+              return (
+                <span key={index} className="current">
+                  {i}
+                </span>
+              );
+            if (typeof i === "string")
+              return (
+                <span key={index} className="while">
+                  {i}
+                </span>
+              );
             const el = (
-              <a href={`/demo/page${i}`}>
+              <a key={index} href={`/demo/page${i}`}>
                 <span>{i}</span>
               </a>
             );

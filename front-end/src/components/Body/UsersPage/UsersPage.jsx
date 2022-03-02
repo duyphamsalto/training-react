@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.scss";
 import UserRow from "./UserRow/UserRow";
 
+// useEffect(() => {
+//   getData();
+// }, []);
 const datas = [
   { id: 1, name: "Text line", email: "Text line", status: true },
   { id: 2, name: "Text line", email: "Text line", status: false },
@@ -31,7 +34,7 @@ const UsersPage = () => {
             {datas.map((data) => {
               return (
                 <UserRow
-                  id={data.id}
+                  key={data.id}
                   name={data.name}
                   email={data.email}
                   status={data.status}
