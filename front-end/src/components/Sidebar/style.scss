@@ -1,0 +1,11 @@
+.side-bar {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 200px;
+  max-width: 200px;
+  background: #ccc;
+  height: calc(100vh - 110px);
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
