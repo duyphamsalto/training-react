@@ -10,28 +10,29 @@ use App\Repositories\UserRepo;
  */
 class UserService
 {
-    private UserRepo $repo;
 
-    public function __construct(UserRepo $repo)
+    private UserRepo $userRepo;
+
+    public function __construct(UserRepo $userRepo)
     {
-        $this->repo = $repo;
+        $this->userRepo = $userRepo;
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @param $email
+     * @return \Illuminate\Database\Eloquent\Model|object|null
      */
-    public function getAll()
+    public function getByEmail($email)
     {
-        return $this->repo->getAll();
+        return $this->userRepo->getByEmail($email);
     }
 
     /**
-     * @param $attributes
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function create($attributes)
+    public function getList()
     {
-        return $this->repo->create($attributes);
+        return $this->userRepo->getList();
     }
 
     /**
@@ -40,6 +41,6 @@ class UserService
      */
     public function findOrFail($id)
     {
-        return $this->repo->findOrFail($id);
+        return $this->userRepo->findOrFail($id);
     }
 }
