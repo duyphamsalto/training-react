@@ -1,0 +1,43 @@
+/* .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+   */
+
+   .items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+  }
+  .items:after,
+  .items:before {
+    content: "";
+    display: block;
+    width: 23%;
+    height: 100%;
+  }
+  .items:before {
+    order: 1;
+  }
+  .item {
+    border: 1px solid #f0f0f078;
+    width: 23%;
+    height: 20%;
+    margin-top: 2%;
+  }
+  .box-image {
+    height: 60%;
+    width: 100%;
+  }
+  .title {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .context {
+    margin-top: 10px;
+    padding: 0;
+  }
