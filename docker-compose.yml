@@ -1,0 +1,50 @@
+version: "3.8"
+services:
+  # PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react_back_end
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www/html
+    volumes:
+      - ./back-end:/var/www/html
+      - ./.docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - backend
+  nginx:
+    build:
+      context: ./.docker/nginx
+      dockerfile: Dockerfile
+    container_name: react_nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+       - "12345:443"
+    volumes:
+      - ./back-end:/var/www/html
+    networks:
+      - backend
+  #MySQL Service
+  db:
+    image: 'mysql:8.0'
+    container_name: react_mysql
+    ports:
+      - "44338:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123123
+      MYSQL_DATABASE: react_training_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 123123
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./.docker/mysql/mysql.cnf:/etc/mysql/mysql.cnf
+    networks:
+      - backend
+#Docker Networks
+networks:
+  backend:
+    driver: bridge
