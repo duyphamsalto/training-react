@@ -1,6 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Body, Header, Footer, Sidebar  } from './components/Index';
+import Body from "./components/Content/Body";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
@@ -10,50 +13,6 @@ function App() {
         <Sidebar />
         <Body />
       </div>
-      {/* <tr className="grid">
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-      </tr>
-      <tr className="grid">
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-      </tr>
-      <tr className="grid">
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-        <td>
-          <Card />
-        </td>
-      </tr> */}
-
-
       <Footer />
     </>
   );
