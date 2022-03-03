@@ -1,0 +1,37 @@
+@charset "UTF-8";
+footer {
+  height: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.flex-item-child {
+  margin-top: 25px;
+  height: 50px;
+  margin-left: 225px;
+}
+
+.flex-item-child1 {
+  margin-top: 25px;
+  height: 50px;
+  margin-left: 24px;
+}
+
+/** 最後だけ右寄せ */
+.flex-item:last-child {
+  margin-left: auto;
+  height: 50px;
+  margin-top: 25px;
+}
+/*# sourceMappingURL=style.css.map */

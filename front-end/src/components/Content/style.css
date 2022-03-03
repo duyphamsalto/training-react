@@ -1,0 +1,47 @@
+.items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 90vh;
+}
+
+.items:before {
+  content: "";
+  display: block;
+  width: 23%;
+  height: 100%;
+}
+
+.items:before {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.item {
+  border: 1px solid #f0f0f078;
+  width: 23%;
+  height: 20%;
+  margin-top: 2%;
+}
+
+.box-image {
+  height: 60%;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+}
+
+.context {
+  margin-top: 10px;
+  padding: 0;
+}
+/*# sourceMappingURL=style.css.map */

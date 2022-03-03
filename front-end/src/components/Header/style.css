@@ -1,30 +1,52 @@
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 40px;
   font-size: 20px;
   color: #fff;
   background: rgba(218, 212, 212, 0.972);
   text-align: center;
 }
+
 .flex__row img {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   width: 90%;
 }
+
 .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .search__bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 4px;
   border: 1px solid lightgray;
-  // border-radius: 999px;
   background-color: #f0f2f5;
 }
+
 .search__bar > input {
   border: none !important;
   background-color: #f0f2f5;
@@ -33,6 +55,21 @@ header {
 
 .search__bar > input:focus {
   outline-width: 0;
+}
+
+.search__bar > input::-webkit-input-placeholder {
+  text-align: left;
+  font-size: 15px;
+}
+
+.search__bar > input:-ms-input-placeholder {
+  text-align: left;
+  font-size: 15px;
+}
+
+.search__bar > input::-ms-input-placeholder {
+  text-align: left;
+  font-size: 15px;
 }
 
 .search__bar > input::placeholder {
@@ -44,21 +81,25 @@ header {
   width: 15px;
   height: 15px;
 }
+
 .search__bar > .MuiSvgIcon-root {
   margin-right: 5px;
 }
 
 .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-//iconの指定
 .image_1 {
-  // position: absolute;
   padding: 0;
   margin-left: auto;
 }
+
 .image_1 img {
   height: 20px;
   width: 20px;
@@ -96,9 +137,11 @@ header {
   padding-top: 2px;
   border-radius: 0px;
 }
+
 .image_4 {
   padding: 0;
 }
+
 .image_4 img {
   height: 20px;
   width: 20px;
@@ -107,6 +150,7 @@ header {
   border-radius: 0px;
 }
 
-.my_name{
+.my_name {
   margin-right: 80px;
 }
+/*# sourceMappingURL=style.css.map */
