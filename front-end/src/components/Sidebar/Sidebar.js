@@ -1,7 +1,40 @@
 import React from 'react';
+import { useState, useCallback } from 'react';
+import { Link, useParams } from "react-router-dom";
 import './style.scss';
 
 export default function Sidebar() {
+
+  const menu = [
+    {
+      "title" : "",
+      "block" : [ "dashboard" ]
+    }, {
+      "title" : "main",
+      "block" : [ "users", "posts", "categories" ]
+    }, {
+      "title" : "settings",
+      "block" : [ "profile", "roles", "maps" ]
+    }
+  ]
+
+  // 再レンダリングさせる関数
+  const useForceUpdate = () => {
+    const [ignored, newState] = useState();
+    return useCallback(() => newState({}), []);
+  }
+
+  // 文字列の先頭を大文字にする処理
+  const capitalize = function(str) {
+    if (typeof str !== 'string' || !str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
+  const thisPage = function(str) {
+    const params = window.location.pathname.slice(1);
+    return ( params == str ? ' active' : '' );
+  }
+
   return (
     <div className='side-bar'>
       <div className="content">
@@ -9,56 +42,19 @@ export default function Sidebar() {
           <img src={`${process.env.PUBLIC_URL}/image/Logo.png`}/>
         </div>
       </div>
-      <div className="content">
-        <div className="content__block dashboard">
-          <a href="/dashboard">
-            <img src={`${process.env.PUBLIC_URL}/image/Dashboard.png`} />
-            <span>Dashboard</span>
-          </a>
+      {menu.map((m) => (
+        <div className="content">
+          <span className="content__title">{capitalize(m.title)}</span>
+          {m.block.map((b) => (
+            <div className={`content__block ${b}`}>
+              <Link className={thisPage(b)} to={b} onClick={useForceUpdate}>
+                <img src={`${process.env.PUBLIC_URL}/image/${capitalize(b)}.png`} />
+                <span>{capitalize(b)}</span>
+              </Link>
+            </div>
+          ))}
         </div>
-      </div>
-      <div className="content">
-        <span className="content__title">Main</span>
-        <div className="content__block">
-          <a href="/users">
-            <img src={`${process.env.PUBLIC_URL}/image/3User.png`} />
-            <span>Users</span>
-          </a>
-        </div>
-        <div className="content__block">
-          <a href="/posts">
-            <img src={`${process.env.PUBLIC_URL}/image/Posts.png`} />
-            <span>Posts</span>
-          </a>
-        </div>
-        <div className="content__block">
-          <a href="/categories">
-            <img src={`${process.env.PUBLIC_URL}/image/Categories.png`} />
-            <span>Categories</span>
-          </a>
-        </div>
-      </div>
-      <div className="content">
-        <span className="content__title">Settings</span>
-        <div className="content__block">
-          <a href="/profile">
-            <img src={`${process.env.PUBLIC_URL}/image/Profile.png`} />
-            <span>Profile</span>
-          </a>
-        </div>
-        <div className="content__block">
-          <a href="/roles">
-            <img src={`${process.env.PUBLIC_URL}/image/Roles.png`} />
-            <span>Roles</span>
-          </a>
-        </div>
-        <div className="content__block">
-          <a href="/maps">
-            <img src={`${process.env.PUBLIC_URL}/image/Maps.png`} />
-            <span>Maps</span>
-          </a>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
