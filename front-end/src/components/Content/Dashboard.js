@@ -3,8 +3,8 @@ import './css/dashboard.scss';
 
 export default function Dashboard() {
     return (
-      <div className='dashboard'>
-        Dashboard components
+      <div id="dashboard" className="">
+        <span>Dashboard</span>
       </div>
     );
   }
