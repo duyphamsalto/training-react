@@ -12,7 +12,7 @@ export default function Sidebar() {
       <div className="content">
         <div className="content__block dashboard">
           <a href="#">
-            <img src={`${process.env.PUBLIC_URL}/image/Dashbord.png`} />
+            <img src={`${process.env.PUBLIC_URL}/image/Dashboard.png`} />
             <span>Dashboard</span>
           </a>
         </div>
