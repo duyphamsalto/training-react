@@ -9,6 +9,7 @@
     padding: 8px 0;
     margin: 0 auto;
     line-height: 28px;
+    color: #8a92a6;
     text-decoration-line: none;
   }
   .content {
@@ -16,6 +17,7 @@
     color: #8a92a6;
     &:nth-child(n+3) {
       margin-top: 2rem;
+      padding-bottom: 0.5rem;
     }
     &__logo {
       width: 100%;
@@ -27,9 +29,9 @@
       }
     }
     &__block {
-      a {
-        color: #8a92a6;
+      a.active {
         border-radius: 4px;
+        background-color: rgba(196, 204, 248, 1);
       }
       img {
         position: relative;
