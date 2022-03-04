@@ -1,6 +1,7 @@
 header {
   display: flex;
   width: 1000px;
+  background-color: rgba(255, 255, 255, 1);
   backdrop-filter: blur(64px);
   .search {
     input[type=search] {
@@ -49,6 +50,28 @@ header {
             color: rgba(138, 146, 166, 1);
           }
         }
+      }
+    }
+  }
+}
+
+nav {
+  padding: 15px;
+  margin: 8px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 1);
+  ul {
+    display: flex;
+    margin: 0;
+    li {
+      display: inline-block;
+      img {
+        vertical-align: middle;
+        padding-bottom: 3px;
+      }
+      &:nth-of-type(n+2):before {
+        content: ">";
+        margin: 0 1rem;
       }
     }
   }
