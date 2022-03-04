@@ -10,11 +10,12 @@ const Header = (props) => {
                 <div className="search">
                     <div className="search__bar">
                         <img src={"./images/Search.png"} />
-                        <input
+                        <span>Search...</span>
+                        {/* <input
                             className="search__bar__input"
-                            placeholder="Search"
+                            placeholder="Search..."
                             size="20"
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div className="image_1">
@@ -30,7 +31,7 @@ const Header = (props) => {
                     <img src={"./images/Group.png"} />
                 </div>
                 <div className="name-area">
-                    <span className="name">Taisei</span><br/>
+                    <span className="name">Ryoji</span><br/>
                     <span className="authority">admin</span>
                 </div>
             </header>
