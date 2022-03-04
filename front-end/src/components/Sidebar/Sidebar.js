@@ -11,7 +11,7 @@ export default function Sidebar() {
       </div>
       <div className="content">
         <div className="content__block dashboard">
-          <a href="#">
+          <a href="/dashboard">
             <img src={`${process.env.PUBLIC_URL}/image/Dashboard.png`} />
             <span>Dashboard</span>
           </a>
@@ -20,19 +20,19 @@ export default function Sidebar() {
       <div className="content">
         <span className="content__title">Main</span>
         <div className="content__block">
-          <a href="#">
+          <a href="/users">
             <img src={`${process.env.PUBLIC_URL}/image/3User.png`} />
-            <span>Dashboard</span>
+            <span>Users</span>
           </a>
         </div>
         <div className="content__block">
-          <a href="#">
+          <a href="/posts">
             <img src={`${process.env.PUBLIC_URL}/image/Posts.png`} />
             <span>Posts</span>
           </a>
         </div>
         <div className="content__block">
-          <a href="#">
+          <a href="/categories">
             <img src={`${process.env.PUBLIC_URL}/image/Categories.png`} />
             <span>Categories</span>
           </a>
@@ -41,19 +41,19 @@ export default function Sidebar() {
       <div className="content">
         <span className="content__title">Settings</span>
         <div className="content__block">
-          <a href="#">
+          <a href="/profile">
             <img src={`${process.env.PUBLIC_URL}/image/Profile.png`} />
             <span>Profile</span>
           </a>
         </div>
         <div className="content__block">
-          <a href="#">
+          <a href="/roles">
             <img src={`${process.env.PUBLIC_URL}/image/Roles.png`} />
             <span>Roles</span>
           </a>
         </div>
         <div className="content__block">
-          <a href="#">
+          <a href="/maps">
             <img src={`${process.env.PUBLIC_URL}/image/Maps.png`} />
             <span>Maps</span>
           </a>
