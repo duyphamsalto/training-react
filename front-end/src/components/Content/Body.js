@@ -1,10 +1,10 @@
 import React from 'react';
-import './style.scss';
+import './css/style.scss';
 
 export default function Body() {
   return (
-    <div className='body'>
-      Body components
+    <div id="home" className="">
+      <span>SALTOグループ<br/>大勉強会</span>
     </div>
   );
 }
