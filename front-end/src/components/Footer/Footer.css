@@ -15,7 +15,7 @@ footer {
     height: 50px;
     justify-content: center;
     align-items: center;
-    background: #ddd;
+    background: rgb(255, 255, 255);
     font-size: small;
   }
   .flex-box{

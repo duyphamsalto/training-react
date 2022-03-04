@@ -10,8 +10,8 @@ header {
             align-items: center;
     height: 50px;
     font-size: 20px;
-    color: #fff;
-    background: rgba(218, 212, 212, 0.972);
+    color: rgb(0, 0, 0);
+    background: #fff;
     text-align: center;
   }
   .flex__row img {

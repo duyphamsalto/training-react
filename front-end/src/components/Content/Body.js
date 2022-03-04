@@ -2,7 +2,7 @@ import './Body.css';
 
 export default function Body() {
   const item = (
-    <div class="item">
+    <div className="item">
       <img src={"./images/card-image.png"} class="box-image" />
       <h3 className="title">Card Title</h3>
       <p className="context">
@@ -18,6 +18,6 @@ export default function Body() {
     items.push(item);
   }
 
-  return <div class="items">{items}</div>;
+  return <div className="items">{items}</div>;
 }
 
