@@ -4,34 +4,34 @@ import "./style.css";
 export default function Header() {
   return (
     <header>
-      <div className="flex__row">
+      <div className="header-logo">
         <img src={"./images/Logo.png"} />
       </div>
-      <div className="search">
-        <div className="search__bar">
+      <div className="header-search">
+        <div className="header-search__bar">
           <img src={"./images/Search.png"} />
           <input
             className="search__bar__input"
-            placeholder="Search"
-            size="20"
+            placeholder="Search..."
+            size="10"
           />
         </div>
       </div>
-        <div className="image_1">
-          <img src={"./images/Ellipse 176.png"}/>
-        </div>
-        <div className="image_2">
-          <img src={"./images/Notification.png"} />
-        </div>
-        <div className="image_3">
-          <img src={"./images/Group.png"} />
-        </div>
-        <div className="image_4">
-          <img src={"./images/Group.png"} />
-        </div>
-      <div className="image_5">
-        <span>Taisei</span>
-        <span>admin</span>
+      <div className="header-ellipse-icon">
+        <img src={"./images/Ellipse 176.png"} />
+      </div>
+      <div className="header-notification-icon">
+        <img src={"./images/Notification.png"} />
+      </div>
+      <div className="header-group-icon">
+        <img src={"./images/Group.png"} />
+      </div>
+      <div className="header-person-icon">
+        <img src={"./images/Beared Guy02-min 1.png"} />
+      </div>
+      <div className="header-person">
+        <div className="last-name">Taisei</div>
+        <div className="authority">Administrator</div>
       </div>
     </header>
   );

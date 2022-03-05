@@ -5,61 +5,64 @@ header {
   height: 40px;
   font-size: 20px;
   color: #fff;
-  background: rgba(218, 212, 212, 0.972);
+  // background: rgba(218, 212, 212, 0.972);
   text-align: center;
 }
-.flex__row img {
+.header-logo img {
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  width: 90%;
+  width: 75%;
 }
-.search {
+.header-search {
   display: flex;
   justify-content: center;
+  // margin-top: 7px;
 }
-.search__bar {
+.header-search__bar {
   display: flex;
   padding: 4px;
   border: 1px solid lightgray;
   // border-radius: 999px;
   background-color: #f0f2f5;
 }
-.search__bar > input {
+.header-search__bar > input {
   border: none !important;
   background-color: #f0f2f5;
-  margin-left: 5px;
+  padding-top: 2px;
+  margin-left: 2px;
 }
 
-.search__bar > input:focus {
+.header-search__bar > input:focus {
   outline-width: 0;
 }
 
-.search__bar > input::placeholder {
+.header-search__bar > input::placeholder {
   text-align: left;
-  font-size: 15px;
+  font-size: 12px;
 }
 
-.search__bar > img {
+.header-search__bar > img {
   width: 15px;
   height: 15px;
+  margin:0;
 }
-.search__bar > .MuiSvgIcon-root {
+.header-search__bar > .MuiSvgIcon-root {
   margin-right: 5px;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: flex-end;
-}
+// .flex-container {
+//   // display: flex;
+//   // justify-content: flex-end;
+// }
 
 //iconの指定
-.image_1 {
+.header-ellipse-icon {
   // position: absolute;
   padding: 0;
   margin-left: auto;
 }
-.image_1 img {
+.header-ellipse-icon img {
   height: 20px;
   width: 20px;
   left: 0px;
@@ -67,14 +70,14 @@ header {
   border-radius: 0px;
 }
 
-.image_2 {
+.header-notification-icon {
   left: 14.58%;
   right: 14.58%;
   top: 8.33%;
   bottom: 25.03%;
 }
 
-.image_2 img {
+.header-notification-icon img {
   height: 17px;
   width: 16px;
   padding-left: 3.5px;
@@ -82,31 +85,42 @@ header {
   border-radius: 0px;
 }
 
-.image_3 {
+.header-group-icon {
   left: 14.58%;
   right: 14.58%;
   top: 8.33%;
   bottom: 25.03%;
 }
 
-.image_3 img {
+.header-group-icon img {
   height: 17px;
   width: 16px;
   padding-left: 3.5px;
   padding-top: 2px;
   border-radius: 0px;
 }
-.image_4 {
+.header-person-icon {
   padding: 0;
 }
-.image_4 img {
-  height: 20px;
-  width: 20px;
+.header-person-icon img {
+  height: 28px;
+  width: 28px;
   padding-left: 3.5px;
   padding-top: 2px;
   border-radius: 0px;
 }
 
-.my_name{
-  margin-right: 80px;
+.header-person .last-name {
+  margin-right: 150px;
+  // margin-left: 16px;
+  font-size: 14px;
+  color: black;
+  text-align: left
+}
+
+.header-person .authority {
+  margin-right: 150px;
+  // margin-left: 16px;
+  font-size: 9px;
+  color: #8a92a6;
 }

@@ -3,24 +3,42 @@
   // flex-wrap: wrap;
   flex: 0 0 200px;
   // max-width: 200px;
-  background: #ccc;
   height: calc(100vh - 110px);
-  align-items: center;
-  justify-content: center;
-  color: #ADB5BD;
-  ;
+  // align-items: center;
+  // justify-content: center;
+  color: #adb5bd;
+  margin-top: 82px;
+  // background-color: #fff;
+}
+.side-bar-item:first-child a {
+  background: blue;
+  border-radius: 4px;
+  color: #fff;
 }
 
-// .flex-container {
-// 	display: flex;
-// 	flex-direction: column;
-// }
+.side-bar-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 6px;
+  padding: 12px 30px;
+  border-radius: 4px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
 
-// /* 子要素(アイテム) */
-// .flex-item {
-// 	margin: 10px auto;
-// 	padding: 5px 10px;
-// 	box-sizing: border-box;
-// 	background-color: #343434;
-// 	color: #fff;
-// }
+.side-bar-item.is-active a {
+  background: #c4ccf8;
+}
+.side-bar-content p {
+  margin-bottom: 8px;
+  margin-top: 44px;
+  margin-left: 32px;
+}
+.side-bar-content {
+  border-bottom: 1px solid #e9ecef;
+  margin-top: 25px;
+}
+img {
+  margin-right: 17px;
+}

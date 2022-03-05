@@ -9,27 +9,27 @@ footer {
           align-items: center;
 }
 
-.flex-box {
+.footer-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-.flex-item-child {
+.privacy {
   margin-top: 25px;
   height: 50px;
   margin-left: 225px;
 }
 
-.flex-item-child1 {
+.term-of-use {
   margin-top: 25px;
   height: 50px;
   margin-left: 24px;
 }
 
 /** 最後だけ右寄せ */
-.flex-item:last-child {
+.corporate:last-child {
   margin-left: auto;
   height: 50px;
   margin-top: 25px;

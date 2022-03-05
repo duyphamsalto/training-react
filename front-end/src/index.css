@@ -14,13 +14,36 @@ code {
 
 #root {
   margin: auto;
-  padding: 15px;
+  /* padding: 15px; */
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 1fr;
   /* nowarpに変更 */
-  flex-wrap: nowrap; 
+  /* flex-wrap: nowrap;  */
   /* 追記箇所 */
   overflow: hidden;
+  flex-grow: 1 1;
+
+  /* background: #E5E5E5; */
+
+}
+.sub-container{
+  background: #E5E5E5;
+  padding:5px;
+}
+.sub-container-item{
+  background: #fff;
+}
+
+.sub-container-item2{
+  background: #fff;
+  padding:30px;
+  /* height: 18vh; */
+}
+.sub-container-item3{
+  background: #fff;
+  /* padding:30px; */
+  height: 70vh;
 }

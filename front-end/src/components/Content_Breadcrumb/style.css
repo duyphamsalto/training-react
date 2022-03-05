@@ -1,0 +1,21 @@
+.breadcrumb {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 14px 25px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.breadcrumb img {
+  margin-right: 5px;
+}
+
+.breadcrumb-item {
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+/*# sourceMappingURL=style.css.map */
