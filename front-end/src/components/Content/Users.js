@@ -21,17 +21,19 @@ export default function Users() {
     }
 
     return (
-        <table>
-            <tr className="table-head">
-                <th className="check">□</th>
-                <th className="title">Title</th>
-                <th className="name">User Name</th>
-                <th className="email">Email</th>
-                <th className="status">Status</th>
-                <th className="action">Title</th>
-            </tr>
-            {columns}
-        </table>
+        <div className="back">
+            <table>
+                <tr className="table-head">
+                    <th className="check">□</th>
+                    <th className="title">Title</th>
+                    <th className="name">User Name</th>
+                    <th className="email">Email</th>
+                    <th className="status">Status</th>
+                    <th className="action">Title</th>
+                </tr>
+                {columns}
+            </table>
+        </div>
     );
 
 }

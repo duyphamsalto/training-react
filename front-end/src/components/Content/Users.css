@@ -1,8 +1,12 @@
-table {
+.back{
     background-color: white;
-    border-collapse: collapse;
     width: 100%;
-    height: 100%;
+    height: 95%;
+    padding-top: 5px;
+    margin-left: 5px;
+}
+table {
+    border-collapse: collapse;
     margin: 20px;
 }
 table th,
@@ -13,7 +17,7 @@ table td {
 table th {
     border-bottom: solid 1px rgb(0, 0, 0);
 }
-table tr:nth-child(odd) {
+table tr:nth-child(even) {
     background-color: #eee;
 }
 
