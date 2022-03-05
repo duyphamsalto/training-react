@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Body from "./components/Content/Body";
+import Users from "./components/Content/Users";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -11,7 +12,8 @@ function App() {
       <Header />
       <div className="container">
         <Sidebar />
-        <Body />
+        {/* <Body /> */}
+        <Users />
       </div>
       <Footer />
     </>

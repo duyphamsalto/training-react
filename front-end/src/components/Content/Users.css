@@ -1,0 +1,41 @@
+table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+}
+table th,
+table td {
+    border: solid 1px rgb(209, 209, 209);
+    height: 30px;
+}
+table th {
+    border-bottom: solid 1px rgb(0, 0, 0);
+}
+table tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.check {
+    text-align: center;
+    width: 3%;
+}
+.title {
+    width: 3%;
+}
+.name {
+    width: 26%;
+}
+.email {
+    width: 26%;
+}
+.status {
+    width: 26%;
+}
+.action {
+    width: 14%;
+}
+.action-data {
+    color: blue;
+}
