@@ -8,6 +8,7 @@
 table {
     border-collapse: collapse;
     margin: 20px;
+    width: 97%;
 }
 table th,
 table td {
@@ -25,20 +26,29 @@ table tr:nth-child(even) {
     text-align: center;
     width: 3%;
 }
-.title {
-    width: 3%;
-}
 .name {
     width: 26%;
+}
+.name-header{
+    text-align: left;
 }
 .email {
     width: 26%;
 }
+.email-header{
+    text-align: left;
+}
 .status {
     width: 26%;
 }
+.status-header{
+    text-align: left;
+}
 .action {
     width: 14%;
+}
+.action-header{
+    text-align: left;
 }
 .action-data {
     color: blue;
