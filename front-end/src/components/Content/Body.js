@@ -3,7 +3,7 @@ import './Body.css';
 export default function Body() {
   const item = (
     <div className="item">
-      <img src={"./images/card-image.png"} class="box-image" />
+      <img src={"./images/card-image.png"} class="box-image" alt="16:9の画像" />
       <h3 className="title">Card Title</h3>
       <p className="context">
         This is a longer card with supporting text below as a natural lead-in to
