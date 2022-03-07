@@ -11,7 +11,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}></Route>
-        <Route path="/Posts" element={<App2 />}></Route>
+        <Route path="/User" element={<App2 />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

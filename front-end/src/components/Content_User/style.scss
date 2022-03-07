@@ -28,19 +28,19 @@ table tr:nth-child(odd) {
     background-color: #eee;
 }
 
-.first_area {
+.checkbox-Area {
     min-width: 46px;
     width: 46px;
 }
-.second_Area {
+.title_Area {
     min-width: 50px;
     width: 50px;
 }
-.forth_Area {
+.email_Area {
     min-width: 159px;
     height: 24px;
 }
-.fifth_Area {
+.status_Area {
     min-width: 159px;
     height: 24px;
 }
@@ -51,6 +51,6 @@ table tr:nth-child(odd) {
 
 td a {
     padding-right: 5px;
-    color:#0D6EFD;
+    color: #0d6efd;
     text-decoration: none;
 }

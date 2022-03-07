@@ -1,10 +1,11 @@
 import './App.css';
-import Posts from './components/Content_Posts/Posts';
+import User from './components/Content_User/User';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Breadcrumb from "./components/Content_Breadcrumb/Breadcrumb";
 import Sidebar from './components/Sidebar/Sidebar';
 import Pagination from "./components/Pagination/Pagination";
+
 function App2() {
   return (
     <>
@@ -14,7 +15,7 @@ function App2() {
       <div className="sub-container">
           <Breadcrumb />
           <div className="sub-container-item2"> 
-          <Posts/>
+          <User/>
           </div>
           <div className="sub-container-item3">  
           <Pagination />
