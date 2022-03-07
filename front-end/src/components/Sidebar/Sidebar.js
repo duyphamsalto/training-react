@@ -13,13 +13,13 @@ export default function Sidebar() {
       <div className="side-bar-content">
         <p>Main</p>
         <div className="side-bar-item is-active">
-          <a href="#">
+          <a href="/Users">
             <img src="./images/3User.png" />
             <span>Users</span>
           </a>
         </div>
         <div className="side-bar-item">
-          <a href="#">
+          <a href="/">
             <img src="./images/Game.png" />
             <span>Posts</span>
           </a>

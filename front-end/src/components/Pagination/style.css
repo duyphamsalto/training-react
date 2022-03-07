@@ -42,7 +42,7 @@
 
 .pager .pagination li a:hover,
 .pager .pagination li a.active {
-  color: #000;
+  color: #fff;
   background: #0D6EFD;
 }
 
