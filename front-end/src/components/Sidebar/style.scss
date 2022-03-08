@@ -3,9 +3,30 @@
   flex-wrap: wrap;
   flex: 0 0 200px;
   max-width: 200px;
-  background: #ccc;
-  height: calc(100vh - 110px);
+  background: white;
+  width: 10vw;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   font-size: 30px;
+  position: relative;
+}
+
+#iconImg {
+    max-width: 200px;
+    background: white;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid gray;
+    box-sizing: border-box;
+
+    &>img{
+      width: 80%;
+      height: auto;
+    }
 }

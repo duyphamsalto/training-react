@@ -1,10 +1,16 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
 export default function Footer() {
   return (
     <footer>
-      Footer components
+      <div id='left-f'>
+        <a href='#'>Privacy Policy</a>
+        <a href='#'>Terms of Use</a>
+      </div>
+      <div>
+        &copy;2022 hogehoge　
+      </div>
     </footer>
   );
 }

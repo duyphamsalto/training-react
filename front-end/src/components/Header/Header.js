@@ -1,10 +1,13 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
 export default function Header() {
   return (
     <header>
-      Header components
+      <div id='right-h'>
+        <input id='serch-window'></input>
+        <div></div>
+      </div>
     </header>
   );
 }
