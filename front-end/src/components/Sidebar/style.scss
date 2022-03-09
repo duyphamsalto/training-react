@@ -1,4 +1,4 @@
-.side-bar {
+.sidebar {
   width: 200px;
   height: 100vh;
   a {
@@ -12,12 +12,12 @@
     color: #8a92a6;
     text-decoration-line: none;
   }
-  .content {
+  &__content {
     border-bottom: 1px solid rgba(233, 236, 239, 1);
     color: #8a92a6;
-    &:nth-child(n+3) {
-      margin-top: 2rem;
-      padding-bottom: 0.5rem;
+    &__title {
+      margin: 1rem;
+      font-size: 2rem;
     }
     &__logo {
       width: 100%;
@@ -29,7 +29,7 @@
       }
     }
     &__block {
-      a.active {
+      a.activated  {
         border-radius: 4px;
         background-color: rgba(196, 204, 248, 1);
       }
