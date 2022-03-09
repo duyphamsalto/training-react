@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState, useCallback } from 'react';
-import { Link, useParams, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import './style.scss';
 
 export default function SideContents(props) {
@@ -16,7 +15,7 @@ export default function SideContents(props) {
       {props.block.map((b) => (
         <div className={`sidebar__content__block ${b}`}>
           <NavLink to={`/${b}`} className={({isActive}) => (isActive ? 'activated':'')}>
-            <img src={`${process.env.PUBLIC_URL}/image/${capitalize(b)}.png`} />
+            <img src={`${process.env.PUBLIC_URL}/image/${capitalize(b)}.png`} alt={b} />
             {capitalize(b)}
           </NavLink>
         </div>

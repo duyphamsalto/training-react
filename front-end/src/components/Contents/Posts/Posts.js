@@ -26,7 +26,7 @@ export default function Posts() {
         <div className='row'>
           {cards.map((card) => (
             <div className='card'>
-              <img src={`${process.env.PUBLIC_URL}/image/card-image.png`} />
+              <img src={`${process.env.PUBLIC_URL}/image/card-image.png`} alt='thumnail' />
               <span className='card__title'>{card.title}</span>
               <p className='card__text'>{card.text}</p>
             </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useCallback } from 'react';
 import './style.scss';
 
 import SideContents from './SideContents/SideContents'
@@ -26,7 +25,7 @@ export default function Sidebar() {
     <div className='sidebar'>
       <div className='sidebar__content'>
         <div className='sidebar__content__logo'>
-          <img src={`${process.env.PUBLIC_URL}/image/Logo.png`}/>
+          <img src={`${process.env.PUBLIC_URL}/image/Logo.png`} alt='Logo'/>
         </div>
       </div>
       {menu.map((m) => (

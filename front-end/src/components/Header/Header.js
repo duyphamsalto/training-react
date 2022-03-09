@@ -9,11 +9,11 @@ export default function Header() {
         <button>検索</button>
       </div>
       <div className='contentBox'>
-        <img src={`${process.env.PUBLIC_URL}/image/UnionFlag.png`} />
-        <img src={`${process.env.PUBLIC_URL}/image/Notification.png`} />
-        <img src={`${process.env.PUBLIC_URL}/image/Group.png`} />
+        <img src={`${process.env.PUBLIC_URL}/image/UnionFlag.png`} alt='UnionFlag' />
+        <img src={`${process.env.PUBLIC_URL}/image/Notification.png`} alt='Notification' />
+        <img src={`${process.env.PUBLIC_URL}/image/Group.png`} alt='Group' />
         <div className='contentBox__profile'>
-          <img src={`${process.env.PUBLIC_URL}/image/profile-image.jpg`} />
+          <img src={`${process.env.PUBLIC_URL}/image/profile-image.jpg`} alt='myprofile' />
           <div className='contentBox__profile__text'>
             <span>橋本泰河</span>
             <span>Admin</span>
