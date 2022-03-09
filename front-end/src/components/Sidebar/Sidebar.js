@@ -8,24 +8,24 @@ export default function Sidebar() {
 
   const menu = [
     {
-      "id"    : "1",
-      "title" : "",
-      "block" : [ "dashboard" ]
+      'id'    : '1',
+      'title' : '',
+      'block' : [ 'dashboard' ]
     }, {
-      "id"    : "2",
-      "title" : "main",
-      "block" : [ "users", "posts", "categories" ]
+      'id'    : '2',
+      'title' : 'main',
+      'block' : [ 'users', 'posts', 'categories' ]
     }, {
-      "id"    : "3",
-      "title" : "settings",
-      "block" : [ "profile", "roles", "maps" ]
+      'id'    : '3',
+      'title' : 'settings',
+      'block' : [ 'profile', 'roles', 'maps' ]
     }
   ]
 
   return (
     <div className='sidebar'>
-      <div className="sidebar__content">
-        <div className="sidebar__content__logo">
+      <div className='sidebar__content'>
+        <div className='sidebar__content__logo'>
           <img src={`${process.env.PUBLIC_URL}/image/Logo.png`}/>
         </div>
       </div>
