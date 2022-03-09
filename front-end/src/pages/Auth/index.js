@@ -10,14 +10,9 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { LoadingButton } from '@mui/lab';
+import SendIcon from '@mui/icons-material/Send';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import FormControl from '@mui/material/FormControl';
-import IconButton from '@mui/material/IconButton';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import Input from '@mui/material/Input';
-import InputAdornment from '@mui/material/InputAdornment';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useState } from 'react';
 import { fetchLogin } from '../../services/user';
 
@@ -43,8 +38,8 @@ export default function SignIn() {
     email: "",
     password: ""
   });
-  const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -53,7 +48,9 @@ export default function SignIn() {
 
   async function handleLogin() {
     setErrors({});
+    setIsLoading(true);
     const res = await fetchLogin(values);
+    setIsLoading(false);
     if (!res.isOk && res.data.errors) {
       return setErrors(res.data.errors);
     }
@@ -93,7 +90,7 @@ export default function SignIn() {
               value={values.email}
               onChange={(e) => handleChange(e)}
             />
-            
+
             <TextField
               margin="normal"
               required
@@ -101,32 +98,25 @@ export default function SignIn() {
               label="Password"
               fullWidth
               autoComplete="current-password"
-              type={showPassword ? 'text' : 'password'}
+              type="password"
               helperText={errors.password ?? ''}
               error={errors.password ? true : false}
               value={values.password}
               onChange={(e) => handleChange(e)}
-              InputProps={{
-                endAdornment: <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={() => setShowPassword(!showPassword)}
-                    edge="end"
-                  >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }}
             />
-            <Button
-              type="button"
+            <LoadingButton
+              sx={{ mt: 2, mb: 2 }}
               fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              size="small"
+              color="secondary"
               onClick={handleLogin}
+              endIcon={<SendIcon />}
+              loading={isLoading}
+              loadingPosition="end"
+              variant="contained"
             >
               Sign In
-            </Button>
+            </LoadingButton>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
