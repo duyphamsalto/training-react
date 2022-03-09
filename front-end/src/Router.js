@@ -5,10 +5,11 @@ import {
   Link,
   useRoutes
 } from 'react-router-dom';
-import Auth from './components/Auth';
+import Auth from './pages/Auth';
 import Layout from './components/Layout';
-import UserList from './components/Users/UserList';
-import PostList from './components/Posts/PostList';
+import PostListPage from './pages/Post';
+import UserListPage from './pages/User';
+
 
 const Home = () => {
   return (
@@ -54,11 +55,11 @@ const routes = [
         path: '/'
       },
       {
-        element: <UserList />,
+        element: <UserListPage />,
         path: '/users'
       },
       {
-        element: <PostList />,
+        element: <PostListPage />,
         path: '/posts',
         children: [
           {

@@ -6,7 +6,7 @@ import Skeleton from "@mui/material/Skeleton";
 import './post.scss';
 import PostCard from './PostCard';
 
-export default function UserList() {
+export default function PostList() {
   const [isLoading, setLoading] = useState(true);
 
   const [data] = useState(Array(12).fill({

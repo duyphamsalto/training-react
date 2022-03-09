@@ -15,12 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
-    Route::post('/login',  [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('login');
 });
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
         Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-        Route::resource('users', UserController::class)->only(['index']);
+        Route::resource('users', UserController::class)->except(['create', 'show']);
+        Route::fallback(function () {
+            return response()->json([
+                'message' => 'Page Not Found. If error persists, contact admin@gmail.com'
+            ], 404);
+        });
     });
 });

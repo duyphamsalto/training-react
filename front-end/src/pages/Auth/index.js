@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,9 +11,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Input from '@mui/material/Input';
+import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useState } from 'react';
 import { fetchLogin } from '../../services/user';
-import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -32,22 +39,28 @@ const theme = createTheme();
 export default function SignIn() {
   const navigate = useNavigate();
 
-  const [info, setInfo] = useState({
+  const [values, setValues] = useState({
     email: "",
     password: ""
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({});
 
   function handleChange(e) {
     const { name, value } = e.target;
-    setInfo((state) => ({ ...state, [name]: value }));
+    setValues((state) => ({ ...state, [name]: value }));
   }
 
   async function handleLogin() {
-    const res = await fetchLogin(info);
-    if (res.isOk) {
-      return navigate('/users');
+    setErrors({});
+    const res = await fetchLogin(values);
+    if (!res.isOk && res.data.errors) {
+      return setErrors(res.data.errors);
     }
+
+    return navigate('/users');
   }
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -75,21 +88,35 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
-              autoFocus
-              value={info.email}
+              error={errors.email ? true : false}
+              helperText={errors.email ?? ''}
+              value={values.email}
               onChange={(e) => handleChange(e)}
             />
+            
             <TextField
               margin="normal"
               required
-              fullWidth
               name="password"
               label="Password"
-              type="password"
-              id="password"
-              value={info.password}
-              onChange={(e) => handleChange(e)}
+              fullWidth
               autoComplete="current-password"
+              type={showPassword ? 'text' : 'password'}
+              helperText={errors.password ?? ''}
+              error={errors.password ? true : false}
+              value={values.password}
+              onChange={(e) => handleChange(e)}
+              InputProps={{
+                endAdornment: <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={() => setShowPassword(!showPassword)}
+                    edge="end"
+                  >
+                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }}
             />
             <Button
               type="button"

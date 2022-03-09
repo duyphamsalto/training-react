@@ -25,13 +25,12 @@ async function handleFetch(url, options, timeout) {
     if (!res.ok) {
       const errors = (await res.json()) || res.statusText;
       if (res.status === 401) {
-        console.log(errors);
+        window.location = '/login';
       }
-      return { isOk: false, data: {}, errors, isInvalid: true, status: res.status };
+      return { isOk: false, data: errors, isInvalid: true, status: res.status };
     }
     return { isOk: true, data: await res.json(), isInvalid: true };
   } catch (error) {
-    console.log(error);
     return { isOk: false, data: {}, isInvalid: false };
   }
 }

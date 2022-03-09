@@ -51,7 +51,7 @@ export default function UserList() {
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>Waiting</td>
-                <td>
+                <td className='d-flex justify-content-around'>
                   <button type="button" className="btn btn-outline-success btn-sm mx-2">Publish</button>
                   <button type="button" className="btn btn-outline-info btn-sm mx-2">Edit</button>
                   <button type="button" className="btn btn-outline-danger btn-sm mx-2">Delete</button>

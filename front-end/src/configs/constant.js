@@ -10,6 +10,7 @@ export const API = {
   USER: {
     GET: `${CONSTANT.API}/api/v1/users`,
     LOGIN: `${CONSTANT.API}/api/v1/login`,
+    LOGOUT: `${CONSTANT.API}/api/v1/logout`,
   },
   POST: {
     GET: `${CONSTANT.API}/api/v1/posts`

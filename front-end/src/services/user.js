@@ -7,6 +7,15 @@ export async function fetchLogin(body) {
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
   }
+  
+  return res;
+}
+
+export async function fetchLogout() {
+  const res = await fetchAsPost(API.USER.LOGOUT);
+  if (res.isOk) {
+    localStorage.clear();
+  }
 
   return res;
 }
