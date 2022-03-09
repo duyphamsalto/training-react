@@ -1,14 +1,13 @@
 import React from 'react';
-import { useState, useCallback } from 'react';
+import { Link, NavLink, useLocation } from "react-router-dom";
 import './style.scss';
 
 export default function BreadcrumbTrail() {
+  // URLパスを取得
+  const location = useLocation();
+  const urlPath = location.pathname.slice(1).split('/');
+  console.log(urlPath);
 
-  // 再レンダリングさせる関数
-  const useForceUpdate = () => {
-    const [ignored, newState] = useState();
-    return useCallback(() => newState({}), []);
-  }
   // 文字列の先頭を大文字にする処理
   const capitalize = function(str) {
     if (typeof str !== 'string' || !str) return str;
@@ -18,8 +17,15 @@ export default function BreadcrumbTrail() {
   return (
     <nav>
       <ul>
-        <li><img src={`${process.env.PUBLIC_URL}/image/icon-wrapper-h.png`} />&nbsp;Home</li>
-        <li>{capitalize(window.location.pathname.slice(1))}</li>
+        <li>
+          <img src={`${process.env.PUBLIC_URL}/image/icon-wrapper-h.png`} />
+          &nbsp;<Link to='/'>Home</Link>
+        </li>
+        {urlPath.map((path) => (
+          <li>
+            <NavLink to={`/${path}`}>{capitalize(path)}</NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
