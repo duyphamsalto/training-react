@@ -13,7 +13,7 @@ const Header = (props) => {
                 </div>
             </div>
             <div className="image_1">
-                <img src={"./images/Ellipse 176.png"} alt="国旗" />
+                <img src={"./images/Ellipse-176.png"} alt="国旗" />
             </div>
             <div className="image_2">
                 <img src={"./images/Notification.png"} alt="通知アイコン" />
