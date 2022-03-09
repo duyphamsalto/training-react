@@ -1,11 +1,11 @@
-import Body from './components/Content/Body';
-import Dashboard from './components/Content/Dashboard';
-import Users from './components/Content/Users';
-import Posts from './components/Content/Posts';
-import Categories from './components/Content/Categories';
-import Profile from './components/Content/Profile';
-import Roles from './components/Content/Roles';
-import Maps from './components/Content/Maps';
+import Body from './components/Contents/Body';
+import Dashboard from './components/Contents/Dashboard';
+import Users from './components/Contents/Users/Users';
+import Posts from './components/Contents/Posts/Posts';
+import Categories from './components/Contents/Categories';
+import Profile from './components/Contents/Profile';
+import Roles from './components/Contents/Roles';
+import Maps from './components/Contents/Maps';
 
 const routes = [
   {

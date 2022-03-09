@@ -18,9 +18,9 @@ function App() {
         <Routes>
           {routes.map((route, idx) => (
             <Route
+              key={idx}
               path={route.path}
               element={route.component}
-              key={idx}
             />
           ))}
         </Routes>
