@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./style.scss";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div class="privacy">Privacy Policy</div>
         <div class="term-of-use">Term of Use</div>
         <div class="corporate">
-          ⓒ2022 Admin Ul,Made with ♡ by Taisei Kawana Degsign
+        &copy;2022 Admin Ul,Made with &hearts; by Taisei Kawana Degsign
         </div>
       </div>
     </footer>

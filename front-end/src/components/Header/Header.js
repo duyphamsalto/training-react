@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./style.scss";
 
 export default function Header() {
   return (
@@ -18,7 +18,7 @@ export default function Header() {
         </div>
       </div>
       <div className="header-ellipse-icon">
-        <img src={"./images/Ellipse 176.png"} />
+        <img src={"./images/Ellipse176.png"} />
       </div>
       <div className="header-notification-icon">
         <img src={"./images/Notification.png"} />

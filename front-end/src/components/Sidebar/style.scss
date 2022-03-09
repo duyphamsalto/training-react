@@ -1,14 +1,9 @@
 .side-bar {
-  // display: flex;
-  // flex-wrap: wrap;
-  flex: 0 0 200px;
-  // max-width: 200px;
-  height: calc(100vh - 110px);
-  // align-items: center;
-  // justify-content: center;
+  // flex: 0 0 200px;
+  width:200px;
+  height: 100vh;
   color: #adb5bd;
   margin-top: 82px;
-  // background-color: #fff;
 }
 .side-bar-item:first-child a {
   background: blue;

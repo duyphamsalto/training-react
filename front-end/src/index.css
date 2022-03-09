@@ -18,29 +18,14 @@ code {
 .container {
   display: grid;
   grid-template-columns: 200px 1fr;
-  /* nowarpに変更 */
-  /* flex-wrap: nowrap;  */
-  /* 追記箇所 */
   overflow: hidden;
-  flex-grow: 1 1;
-
-  /* background: #E5E5E5; */
 }
 .sub-container {
   background: #e5e5e5;
-  padding: 5px;
+  height: 1000px;
 }
 .sub-container-item {
   background: #fff;
-}
-
-.sub-container-item2 {
-  background: #fff;
-  padding: 15px;
-  /* height: 18vh; */
-}
-.sub-container-item3 {
-  background: #fff;
-  /* padding:30px; */
-  height: 70vh;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }

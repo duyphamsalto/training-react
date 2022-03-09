@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.css";
+import "./style.scss";
 
-export default function Body() {
+export default function Post() {
   const item = (
     <div class="item">
       <img src={"./images/card-image.png"} class="card-image" />
@@ -14,8 +14,7 @@ export default function Body() {
   );
 
   let items = [];
-  const t = 12;
-  for (let i = 0; i < t; i++) {
+  for (let i = 0; i < 12; i++) {
     items.push(item);
   }
 
