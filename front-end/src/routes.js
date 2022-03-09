@@ -1,4 +1,3 @@
-import Body from './components/Contents/Body';
 import Dashboard from './components/Contents/Dashboard';
 import Users from './components/Contents/Users/Users';
 import Posts from './components/Contents/Posts/Posts';

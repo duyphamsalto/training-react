@@ -1,0 +1,26 @@
+#users {
+  width: 980px;
+  margin: 0 auto;
+  padding: 15px 0;
+  min-height: calc(100vh - 75px - 68px - 54px);
+  background-color: rgba(255, 255, 255, 1);
+  margin-bottom: 8px;
+  table {
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: border-box;
+    th, td {
+      padding: 10px 0;
+      border: 1px solid #DEE2E6;
+      text-align: center;
+      input[type=button]:nth-of-type(2){
+        margin: 0 1rem;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: rgba(238, 238, 238, 1)
+    }
+  }
+}
