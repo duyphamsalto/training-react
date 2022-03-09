@@ -1,32 +1,76 @@
 .side-bar {
-  display: flex;
-  flex-wrap: wrap;
   flex: 0 0 200px;
   max-width: 200px;
   background: white;
-  width: 10vw;
   height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 1em;
   position: relative;
 }
 
 #iconImg {
     max-width: 200px;
     background: white;
-    color: black;
-    align-items: center;
-    justify-content: center;
     font-size: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom: 1px solid gray;
+    height: 5vh;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    border-bottom: 1px solid #E9ECEF;
     box-sizing: border-box;
+    text-align: center;
 
     &>img{
       width: 80%;
       height: auto;
     }
+
+}
+
+.dashboard{
+  background: #3A57E8;
+  box-shadow: 0px 2px 4px rgba(138, 146, 166, 0.3);
+  border-radius: 4px;
+  color: #FFFFFF; 
+  padding: 0.4em;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin: 50px auto 0;
+
+  & img{
+    width: 25px;
+    height: 25px;
+    margin-right: 1em;
+  }
+
+  &>p{
+    margin: 0;
+  }
+}
+
+.menu{
+  margin: 50px auto 0;
+  border-bottom: 1px #E9ECEF solid;
+  width: 80%;
+  align-items: center;
+  color: #ADB5BD;
+
+
+  & p {
+    margin: 0;
+  }
+
+  &>ul{
+    list-style: none;
+    
+    &>li{
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.Main{
+  border-top: 1px #E9ECEF solid;
 }

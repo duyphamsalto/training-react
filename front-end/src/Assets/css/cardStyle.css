@@ -1,5 +1,6 @@
 .itemArea{
     width: 1080px;
+    max-width: calc(100% - 1vw);
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
