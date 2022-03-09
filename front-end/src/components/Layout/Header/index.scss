@@ -1,0 +1,56 @@
+@import "../../../assets/scss/variable";
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 230px;
+  z-index: 99;
+  display: flex;
+  flex: 0 0 calc(100% - 230px);
+  align-items: center;
+  box-shadow: 0 -2px 13px #00000026;
+  padding: 4px 20px;
+  background: #fff;
+}
+
+.search-box {
+  input {
+    height: 30px;
+    &:focus,
+    &.active {
+      box-shadow: none;
+    }
+  }
+}
+.info {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    .avatar {
+      width: 30px;
+      height: 30px;
+      background: #ccc;
+      border-radius: 50%;
+    }
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+      span {
+        line-height: 20px;
+        &:first-child {
+          font-weight: bold;
+        }
+        &:last-child {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
