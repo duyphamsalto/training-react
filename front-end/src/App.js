@@ -1,19 +1,19 @@
 import './App.css';
-import Body from './components/Content/Body';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Posts from './components/Posts/Posts';
+import Users from './components/Users/Users';
 
 function App() {
   return (
-    <>
-      <Header />
-      <div className='container'>
-        <Sidebar />
-        <Body />
-      </div>
-      <Footer />
-    </>
+    <div class='App-body'>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Posts/>}/>
+          <Route path='/users' element={<Users/>}/>
+        </Routes>
+      </Router>
+
+    </div>
   );
 }
 

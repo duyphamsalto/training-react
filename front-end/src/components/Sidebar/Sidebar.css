@@ -1,0 +1,119 @@
+/* whole sidebar */
+.sidebar {
+    background-color: #FFFFFF;
+    box-shadow: 10px 0px #F0F0F2;
+    margin-top: 1px;
+    padding-bottom: 500px;
+    width: 215px;
+    min-width: 215px;
+}
+
+
+/* style of dashboard */
+.sidebar .dashboard {
+    padding-top: 60px;
+}
+.sidebar .dashboard p {
+    background-color: #3957E8;
+    color: white;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-radius: 3px;
+    margin: 0 0 30px 10px;
+    width: 175px;
+    height: 25px;
+    font-size: smaller;
+}
+.sidebar .dashboard img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/* style of main menu */
+.sidebar .main-menu {
+    border-top: 1px solid #F0F0F2;
+    border-bottom: 1px solid #F0F0F2;
+}
+
+/* style of menu header */
+.sidebar .main-menu p {
+    margin-top: 0px;
+    margin-left: 10px;
+    color: #8A92A6;
+    font-size: smaller;
+}
+
+/* style of menu link */
+.sidebar .main-menu span {
+    display: block;
+}
+.sidebar .main-menu a{
+    display: inline-block;
+    width: 165px;
+    height: 25px;
+    margin: 3px 0px 3px 10px;
+    padding-left: 20px;
+    padding-top: 5px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: smaller;
+    vertical-align: middle;
+    color: #8A92A6;
+
+}
+.sidebar .main-menu img {
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* style of activate link */
+.sidebar .main-menu a.activated {
+    background-color:#C4CCF8;
+    color: #3957E8;
+}
+.sidebar .main-menu a .activated {
+    background-color:#C4CCF8;
+    color: #3957E8;
+}
+.sidebar .main-menu a .activated {
+    background-color:#8A92A6;
+    color: #3957E8;
+}
+
+
+
+/* style of settings */
+.sidebar .settings-menu p{
+    margin-top: 30px;
+    margin-left: 10px;
+    color: #8A92A6;
+    font-size: smaller;
+}
+.sidebar .settings-menu ul {
+    padding: 0 10px ;
+}
+
+.sidebar .settings-menu li {
+    color: #8A92A6;
+    margin-bottom: 15px;
+    list-style: none;
+    font-size: smaller;
+}
+
+.sidebar .settings-menu li:last-child {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F0F0F2;
+}
+
+.menu-list {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.menu-list img {
+    margin-right: 10px;
+    vertical-align: middle;
+}

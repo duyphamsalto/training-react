@@ -1,0 +1,30 @@
+.contents-wrapper {
+    padding: 20px 0px 550px 0px;
+}
+
+.contents-wrapper table{
+    width: 95%;
+    margin: 0px auto;
+    border-collapse: collapse;
+    border-color: #dddddd;
+}
+
+.contents-wrapper table tr:nth-child(even) td {
+    background: #F0F0F2;
+}
+
+.contents-wrapper table p {
+    margin:5px;
+    font-size: small;
+}
+
+.contents-wrapper table th {
+    border-bottom: solid 2px black;
+}
+
+.contents-wrapper table td a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #2A7FFC;
+}

@@ -1,10 +1,18 @@
-import React from 'react';
-import './style.scss';
+import './Footer.css';
 
-export default function Footer() {
-  return (
-    <footer>
-      Footer components
-    </footer>
-  );
+function Footer() {
+    return(
+        <>
+            <footer>
+                <div className='left-space'></div>
+                <div className='info-links'>
+                    <p>Privacy Policy</p>
+                    <p>Terms of Use</p>
+                </div>
+                <p className='copy-right'>&copy; 2022 Admin UI, Made with &hearts; by DUY PHAM Design</p>
+            </footer>
+        </>
+    );
 }
+
+export default Footer; 
