@@ -1,0 +1,118 @@
+/* whole sidebar */
+.sidebar {
+    background-color: #FFFFFF;
+    box-shadow: 10px 0px #F0F0F2;
+    margin-top: 1px;
+    padding-bottom: 500px;
+    width: 215px;
+    min-width: 215px;
+}
+
+
+/* style of dashboard */
+.sidebar .dashboard {
+    padding-top: 60px;
+}
+.sidebar .dashboard p {
+    background-color: #3957E8;
+    color: white;
+    border-radius: 3px;
+    margin: 0 0 30px 10px;
+    width: 90%;
+    height: 30px;
+    line-height: 30px;
+    font-size: smaller;
+}
+
+
+/* style of main menu */
+.sidebar .main-menu {
+    border-top: 1px solid #F0F0F2;
+    border-bottom: 1px solid #F0F0F2;
+}
+
+.sidebar .main-menu a{
+    text-decoration: none;
+    color: #8A92A6;
+}
+
+.sidebar .main-menu p {
+    margin-top: 0px;
+    margin-left: 10px;
+    color: #8A92A6;
+    font-size: smaller;
+}
+.sidebar .main-menu ul {
+    padding: 0 10px ;
+}
+
+.sidebar .main-menu li {
+    color: #8A92A6;
+    margin-bottom: 15px;
+    list-style: none;
+    font-size: smaller;
+    line-height: 30px;
+    border-radius: 3px;
+}
+
+.sidebar .main-menu .users-link .activated {
+    background-color:#C4CCF8;
+    color: #3957E8;
+}
+
+.sidebar .main-menu .posts-link .activated {
+    background-color:#C4CCF8;
+    color: #3957E8;
+    
+}
+
+.sidebar .main-menu .category-link .activated {
+    background-color:#8A92A6;
+    color: #3957E8;
+}
+
+.sidebar .main-menu .menu-list {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.sidebar .main-menu .menu-list img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* style of settings */
+.sidebar .settings-menu p{
+    margin-top: 30px;
+    margin-left: 10px;
+    color: #8A92A6;
+    font-size: smaller;
+}
+.sidebar .settings-menu ul {
+    padding: 0 10px ;
+}
+
+.sidebar .settings-menu li {
+    color: #8A92A6;
+    margin-bottom: 15px;
+    list-style: none;
+    font-size: smaller;
+}
+
+.sidebar .settings-menu li:last-child {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F0F0F2;
+}
+
+.menu-list {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.menu-list img {
+    margin-right: 10px;
+    vertical-align: middle;
+}

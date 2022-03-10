@@ -1,0 +1,41 @@
+.components-body .page-links {
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  font-size: smaller;
+}
+.components-body .page-links img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.components-body .page-links p {
+  margin: 0;
+  margin-left: 20px;
+}
+
+.components-wrapper {
+  padding: 10px 0px 700px 20px;
+}
+
+.components-wrapper table {
+  width: 90%;
+  border-collapse: collapse;
+  border-color: #bbb;
+}
+
+.components-wrapper table th {
+  border-bottom: 2px solid #000;
+}
+
+
+.components-wrapper table tr:nth-child(even) {
+  background: #EEEEEE;
+}
+
+.components-wrapper table a {
+  text-decoration: none;
+}
+
