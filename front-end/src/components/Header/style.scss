@@ -1,10 +1,77 @@
 header {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   height: 40px;
   font-size: 20px;
   color: #fff;
-  background: #ff4d00;
   text-align: center;
+}
+
+.test-image {
+  max-width: 200px;
+  background-color: #fff;
+}
+
+
+.search_box {
+  display: inline-block; /* なくても大丈夫だけど、念の為 */
+  position: relative;    /* 基準値とする */
+  margin-left: 5%;
+  &::before {
+    content: "";           /* 疑似要素に必須 */
+    width: 16px;           /* アイコンの横幅 */
+    height: 16px;          /* アイコンの高さ */
+    background: url(../../../public/images/Search.png) no-repeat center center / auto 100%; /* 背景にアイコン画像を配置 */
+    display: inline-block; /* 高さを持たせるためにインラインブロック要素にする */
+    position: absolute;    /* 相対位置に指定 */
+    top: 5px;              /* アイコンの位置。微調整してね */
+    left: 5px;             /* アイコンの位置。微調整してね */
+  }
+  input {
+    padding: 3px 0 3px 2em; /* アイコンを設置するため左の余白を多めに指定*/
+  }
+}
+
+.container_right_justified {
+  width: 15%;
+  height: 100%;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  width: 30%;
+  .ellipse {
+    height: 50%;
+    margin-left: 5%;
+  }
+  .notification {
+    height: 50%;
+    margin-left: 5%;
+  }
+  .group {
+    height: 50%;
+    margin-left: 5%;
+  }
+  .beared-guy {
+    height: 70%;
+    margin-left: 5%;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  p {
+    color: black;
+    margin: 0 0 0 0.5rem;
+    padding: 0;
+    text-align: left;
+    &:first-child {
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    &:last-child {
+      font-size: 0.6rem;
+    }
+  }
 }

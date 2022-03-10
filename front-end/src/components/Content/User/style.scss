@@ -1,0 +1,67 @@
+$backgrount-color: white;
+$border-color: #ccc;
+
+.right-wrapper {
+	background-color: $border-color;
+	min-height: 200vh;
+  width: 90%;
+}
+
+.wrapper {
+  background-color: $backgrount-color;
+  margin-left:  10px;
+  border-radius: 5px;
+  padding-top: 20px;
+  height: 178vh;
+  margin-bottom: 10px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+th,
+td {
+  border: solid 1px;
+  text-align: left;
+}
+th {
+  border-bottom: solid 2px;
+}
+
+table {
+  border-collapse: collapse; 
+  width: 98%; 
+  background-color: $backgrount-color;
+  margin: 10px;
+  height: 10%;
+}
+
+td {
+  height: 20%;
+}
+
+table tr:nth-child(even) {
+  background-color: $border-color;
+}
+
+.checkbox-Area {
+  min-width: 46px;
+  width: 46px;
+}
+.title_Area {
+  min-width: 50px;
+  width: 50px;
+}
+.email_Area {
+  min-width: 159px;
+  height: 3%;
+}
+.status_Area {
+  min-width: 159px;
+  height: 3%;
+}
+td a {
+  padding-right: 5px;
+  color: #0d6efd;
+  text-decoration: none;
+}
