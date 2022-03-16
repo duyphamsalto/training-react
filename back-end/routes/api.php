@@ -21,11 +21,16 @@ Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
         Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-        Route::resource('users', UserController::class)->except(['create', 'show']);
-        Route::fallback(function () {
-            return response()->json([
-                'message' => 'Page Not Found. If error persists, contact admin@gmail.com'
-            ], 404);
-        });
+        Route::get('/users',  [UserController::class, 'index'])->name('index');
+        Route::post('/users',  [UserController::class, 'store'])->name('store');
+        Route::put('/users/{user}',  [UserController::class, 'update'])->name('update');
+        Route::delete('/users/{user}',  [UserController::class, 'destroy'])->name('destroy');
+        route::get('/users/edit/{user}',  [UserController::class, 'edit'])->name('edit');
     });
+});
+
+Route::fallback(function () {
+    return response()->json([
+        'message' => 'Page Not Found. If error persists, contact admin@gmail.com'
+    ], 404);
 });
