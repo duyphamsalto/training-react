@@ -14,7 +14,6 @@
 - **[Html: v5](https://www.w3schools.com/html/)**
 - **[SCSS](https://sass-lang.com)**
 
-
 ## **Setup environment on local**
 
 Download [git-scm](https://git-scm.com/downloads) and install
@@ -34,18 +33,21 @@ Run: git checkout develop || git checkout main
 ```
 
 ### **Notes:**
+
 - Branch **main**: Use for deploy to production
 - Branch **develop**: Use for develop
 
 ## **Setup server:**
 
 **Front-End**
+
 ```JS
 Run: cd front-end
 Run: cp .env.development.example .env.development
 ```
 
 **Back-end**
+
 ```JS
 Run: cd back-end
 Run: cp .env.example .env
@@ -59,16 +61,16 @@ Run: docker-compose build
 Run: docker-compose up -d
 ```
 
-```
 **Migrate database:**
-```JS
 
+```JS
 Run: docker exec -it react_back_end bash
 Run: composer install
 Run: php artisan migrate:fresh --seed
-
 ```
+
 **Database information:**
+
 ```PHP
 DB_HOST=localhost
 DB_PORT=44336
@@ -83,7 +85,6 @@ DB_PASSWORD=123123
 - Run: yarn install
 - Run: yarn start (Build SCSS run on develop)
 - Run: yarn build (Build SCSS deploy to production)
-
 
 ### `yarn start`
 
