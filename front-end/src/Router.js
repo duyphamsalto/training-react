@@ -6,18 +6,10 @@ import {
   useRoutes
 } from 'react-router-dom';
 import Auth from './pages/Auth';
+import Home from './pages/Home/index';
 import Layout from './components/Layout';
 import PostListPage from './pages/Post';
 import UserListPage from './pages/User';
-
-
-const Home = () => {
-  return (
-    <>
-      <h2>Home</h2>
-    </>
-  );
-};
 
 const PostEdit = (id) => {
   return (
