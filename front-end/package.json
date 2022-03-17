@@ -2,7 +2,7 @@
   "name": "training-react",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:12345",
+  "proxy": "https://api.duypham.vn",
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
