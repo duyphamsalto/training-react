@@ -55,8 +55,8 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * @param  ValidationException  $exception
-     * @return array
+     * @param ValidationException $exception
+     * @return \stdClass
      */
     private function transformErrors(ValidationException $exception)
     {
