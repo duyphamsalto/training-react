@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
@@ -33,13 +33,20 @@ const theme = createTheme();
 
 export default function SignIn() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userState = useSelector((state) => state.user);
+  const { isProcessing, isLogged, error } = userState;
 
   const [values, setValues] = useState({
     email: "",
     password: ""
   });
-  const [errors, setErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (isLogged) {
+      return navigate('/users');
+    }
+  }, [isLogged, navigate]);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -47,15 +54,7 @@ export default function SignIn() {
   }
 
   async function handleLogin() {
-    setErrors({});
-    setIsLoading(true);
-    const res = await fetchLogin(values);
-    setIsLoading(false);
-    if (!res.isOk && res.data.errors) {
-      return setErrors(res.data.errors);
-    }
-
-    return navigate('/users');
+    fetchLogin(values, dispatch);
   }
 
   return (
@@ -85,8 +84,8 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
-              error={errors.email ? true : false}
-              helperText={errors.email ?? ''}
+              error={error.email ? true : false}
+              helperText={error.email ?? ''}
               value={values.email}
               onChange={(e) => handleChange(e)}
             />
@@ -99,8 +98,8 @@ export default function SignIn() {
               fullWidth
               autoComplete="current-password"
               type="password"
-              helperText={errors.password ?? ''}
-              error={errors.password ? true : false}
+              helperText={error.password ?? ''}
+              error={error.password ? true : false}
               value={values.password}
               onChange={(e) => handleChange(e)}
             />
@@ -111,7 +110,7 @@ export default function SignIn() {
               color="secondary"
               onClick={handleLogin}
               endIcon={<SendIcon />}
-              loading={isLoading}
+              loading={isProcessing}
               loadingPosition="end"
               variant="contained"
             >
