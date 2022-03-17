@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\Store;
+use App\Http\Requests\User\Update;
 use App\Services\UserService;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -25,47 +26,45 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Store $request
+     * @return \Illuminate\Database\Eloquent\Model
      */
-    public function store(Request $request)
+    public function store(Store $request)
     {
-        //
+        return $this->userService->store($request->validated());
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function edit($id)
     {
-        //
+        return $this->userService->findOrFail($id);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Update $request
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Model
      */
-    public function update(Request $request, $id)
+    public function update(Update $request, $id)
     {
-        //
+        return $this->userService->update($id, $request->validated());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return bool
      */
     public function destroy($id)
     {
-        //
+        return $this->userService->destroy($id);
     }
 }
