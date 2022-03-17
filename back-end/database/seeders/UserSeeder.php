@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $limit = 100;
+        $limit = 1000;
         // Option 1
          \App\Models\User::factory()->create([
              'name' => 'Admin',
@@ -26,6 +26,42 @@ class UserSeeder extends Seeder
              'created_at' => now(),
              'updated_at' => now()
          ]);
+        $infors = [
+            ['name' => '大友真琴', 'email' => 'mako.otomo@salto.link'],
+            ['name' => '小林惇侃', 'email' => 'toshiyasu.kobayashi@salto.link'],
+            ['name' => '岸健太', 'email' => 'kenta.kishi@salto.link'],
+            ['name' => '川名泰聖', 'email' => 'taisei.kawana@salto.link'],
+            ['name' => '松元大河', 'email' => 'taiga.matsumoto@salto.link'],
+            ['name' => '松本健史', 'email' => 'takeshi.matsumoto@salto.link'],
+            ['name' => '桑原克佳', 'email' => 'katsuyoshi.kuwabara@salto.link'],
+            ['name' => '橋本泰河', 'email' => 'taiga.hashimoto@salto.link'],
+            ['name' => '深辺明寛', 'email' => 'akihiro.fukabe@salto.link'],
+            ['name' => '清水勝紀', 'email' => 'katsunori.shimizu@salto.link'],
+            ['name' => '田邊涼二', 'email' => 'ryoji.tanabe@salto.link'],
+            ['name' => '篠岡空憲', 'email' => 'kuken.shinooka@salto.link'],
+            ['name' => '諏訪利典', 'email' => 'toshinori.suwa@salto.link'],
+            ['name' => '齊藤保', 'email' => 'yasushi.saito@salto.link'],
+            ['name' => '中原彩華', 'email' => 'ayaka.nakahara@salto.link'],
+            ['name' => '木村恭平', 'email' => 'kyohei.kimura@salto.link'],
+            ['name' => '松山純輝', 'email' => 'junki.matsuyama@salto.link'],
+        ];
+        $users = [];
+        foreach ($infors as $item) {
+            $users[] = [
+                'name' => $item['name'],
+                'email' => $item['email'],
+                'email_verified_at' => now(),
+                'password' => Hash::make('123456'),
+                'remember_token' => str::random(10),
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
+        }
+
+        $chunks = array_chunk($users, 50);
+        foreach ($chunks as $item) {
+            User::insert($item);
+        }
 
         $data = [];
         $faker = Faker::create();
@@ -40,8 +76,6 @@ class UserSeeder extends Seeder
                 'updated_at' => now()
             ];
         }
-
-
 
         // Options 2
         /*
