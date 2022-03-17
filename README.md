@@ -26,7 +26,7 @@ Download https://nodejs.org/en/ and install
 **Clone Github source**
 
 ```JS
-Run: git@github.com:duypham90/react-training.git
+Run: git clone git@github.com:duypham90/react-training.git
 Run: cd react-training
 Run: git fetch --all
 Run: git pull -r
