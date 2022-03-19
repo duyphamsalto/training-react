@@ -8,10 +8,10 @@ import Pagenation from "./Pagination/Pagenation";
 export default function Body() {
   return (
     <div className="Body">
-      <Current></Current>
-      <PostPage></PostPage>
-      <UsersPage></UsersPage>
-      <Pagenation current={6}></Pagenation>
+      <Current />
+      <PostPage />
+      <UsersPage />
+      <Pagenation current={6} />
     </div>
   );
 }

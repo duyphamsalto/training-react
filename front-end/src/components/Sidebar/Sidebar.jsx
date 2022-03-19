@@ -18,7 +18,7 @@ export default function Sidebar() {
               key={item.id}
               secTitle={item.title}
               items={item.items}
-            ></SideSection>
+            />
           );
         })}
       </div>

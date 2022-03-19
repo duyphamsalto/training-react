@@ -92,7 +92,7 @@ const PostPage = () => {
               title={card.title}
               fileName={card.fileName}
               desc={card.desc}
-            ></Card>
+            />
           );
         })}
       </div>

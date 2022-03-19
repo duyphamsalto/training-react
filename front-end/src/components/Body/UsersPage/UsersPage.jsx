@@ -38,7 +38,7 @@ const UsersPage = () => {
                   name={data.name}
                   email={data.email}
                   status={data.status}
-                ></UserRow>
+                />
               );
             })}
           </tbody>

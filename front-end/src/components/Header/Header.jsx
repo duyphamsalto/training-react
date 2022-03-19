@@ -20,8 +20,8 @@ export default function Header() {
         </div>
       </div>
       <div className="right">
-        <HeaderMenu></HeaderMenu>
-        <User name="A-Fukabe"></User>
+        <HeaderMenu />
+        <User name="A-Fukabe" />
       </div>
     </header>
   );
