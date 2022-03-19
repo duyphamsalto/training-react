@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
-import HeaderMenu from "./headerMenu/headerMenu";
-import User from "./User/User";
+import HeaderMenu from "./headerMenu";
+import User from "./User";
 import logo from "asset/Logo.png";
 
 export default function Header() {

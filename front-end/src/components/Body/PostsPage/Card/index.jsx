@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-const Card = (props) => {
+export default function Card(props) {
   return (
     <>
       <article className="Card" data-id={props.id}>
@@ -20,5 +20,4 @@ const Card = (props) => {
       </article>
     </>
   );
-};
-export default Card;
+}

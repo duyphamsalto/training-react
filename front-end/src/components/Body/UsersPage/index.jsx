@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./style.scss";
-import UserRow from "./UserRow/UserRow";
+import UserRow from "./UserRow";
 
 // useEffect(() => {
 //   getData();
@@ -13,7 +13,7 @@ const datas = [
   { id: 5, name: "Text line", email: "Text line", status: true },
 ];
 
-const UsersPage = () => {
+export default function UsersPage() {
   return (
     <>
       <div className="UsersPage">
@@ -46,5 +46,4 @@ const UsersPage = () => {
       </div>
     </>
   );
-};
-export default UsersPage;
+}

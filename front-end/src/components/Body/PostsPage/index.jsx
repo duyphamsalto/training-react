@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./style.scss";
-import Card from "./Card/Card";
+import Card from "./Card";
 
 // useEffect(() => {
 // 		getCardData();
@@ -81,7 +81,7 @@ const cards = [
   },
 ];
 
-const PostPage = () => {
+export default function PostPage() {
   return (
     <>
       <div className="PostPage">
@@ -98,5 +98,4 @@ const PostPage = () => {
       </div>
     </>
   );
-};
-export default PostPage;
+}

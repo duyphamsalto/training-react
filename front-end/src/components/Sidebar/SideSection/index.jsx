@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import SideSectionItem from "./SideSectionItem/SideSectionItem";
+import SideSectionItem from "./SideSectionItem";
 
 export default function SideSection(props) {
   return (

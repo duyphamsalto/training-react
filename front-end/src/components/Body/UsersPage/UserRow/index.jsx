@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import icon from "asset/row-icon.png";
 
-const UserRow = (props) => {
+export default function UserRow(props) {
   return (
     <>
       <tr>
@@ -23,5 +23,4 @@ const UserRow = (props) => {
       </tr>
     </>
   );
-};
-export default UserRow;
+}

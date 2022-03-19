@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.scss";
-import PostPage from "./PostsPage/PostPage";
-import UsersPage from "./UsersPage/UsersPage";
-import Current from "./Current/Current";
-import Pagenation from "./Pagination/Pagenation";
+import PostPage from "./PostsPage";
+import UsersPage from "./UsersPage";
+import Current from "./Current";
+import Pagenation from "./Pagination";
 
 export default function Body() {
   return (

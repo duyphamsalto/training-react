@@ -1,5 +1,5 @@
 import React from "react";
-import SideSection from "./SideSection/SideSection";
+import SideSection from "./SideSection";
 import "./style.scss";
 
 export default function Sidebar() {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-const SideSectionItem = (props) => {
+export default function SideSectionItem(props) {
   return (
     <>
       <li
@@ -17,5 +17,4 @@ const SideSectionItem = (props) => {
       </li>
     </>
   );
-};
-export default SideSectionItem;
+}

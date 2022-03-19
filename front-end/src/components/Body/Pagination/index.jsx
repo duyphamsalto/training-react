@@ -24,7 +24,7 @@ function getPagenationArr(c, m) {
   return rangeWithDots;
 }
 
-const Pagenation = (props) => {
+export default function Pagenation(props) {
   const arr = getPagenationArr(props.current, 20);
 
   return (
@@ -62,5 +62,4 @@ const Pagenation = (props) => {
       </div>
     </>
   );
-};
-export default Pagenation;
+}
