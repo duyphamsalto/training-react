@@ -12,7 +12,7 @@
     background: lighten(#c4ccf8, 5%);
     color: #3a57e8;
   }
-  &[data-flag="active"] {
+  .active {
     background: #c4ccf8;
     color: #3a57e8;
   }

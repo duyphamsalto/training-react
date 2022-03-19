@@ -1,0 +1,12 @@
+@import "../../variable/";
+
+.notFind {
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 5rem;
+  h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+}

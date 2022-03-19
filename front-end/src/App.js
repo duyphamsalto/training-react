@@ -3,20 +3,21 @@ import Body from "./components/layoutComponents/Body";
 import Footer from "./components/layoutComponents/Footer";
 import Header from "./components/layoutComponents/Header";
 import Sidebar from "./components/layoutComponents/Sidebar";
+import { BrowserRouter } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
     <>
-      <Header />
-      <div className="container">
-        <Sidebar />
-        <div className="container-inner">
-          <Body />
-          <Footer />
+      <BrowserRouter>
+        <Header />
+        <div className="container">
+          <Sidebar />
+          <div className="container-inner">
+            <Body />
+            <Footer />
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     </>
   );
 }
-
-export default App;
