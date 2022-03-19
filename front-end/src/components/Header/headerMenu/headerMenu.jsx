@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import icon1 from "../../../asset/Ellipse 176.png";
+import icon1 from "../../../asset/Ellipse.png";
 import icon2 from "../../../asset/Notification.png";
 import icon3 from "../../../asset/Group.png";
 
