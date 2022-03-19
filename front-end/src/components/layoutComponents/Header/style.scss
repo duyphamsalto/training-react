@@ -1,0 +1,53 @@
+@import "../../variable/";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  height: 7.6rem;
+  font-size: 2rem;
+  color: $primaryTextColor;
+  background: #eee;
+  background: $primaryBgColor;
+  backdrop-filter: blur(64px);
+  .left {
+    display: flex;
+    align-items: center;
+    img {
+      width: 23rem;
+    }
+  }
+  .right {
+    display: flex;
+  }
+  .search_box {
+    display: inline-block;
+    position: relative;
+    width: 24rem;
+    border: 1px solid #e9ecef;
+    box-sizing: border-box;
+    border-radius: 4px;
+    input {
+      border: none;
+      width: 100%;
+      outline: none;
+    }
+  }
+
+  .search_box::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url("../../../asset/Search.png") no-repeat center center / auto
+      100%;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+  }
+
+  .search_box input {
+    padding: 0.5rem 0 0.5rem 2em;
+  }
+}

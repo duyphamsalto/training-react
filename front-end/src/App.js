@@ -1,8 +1,8 @@
 import "./App.scss";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import Body from "./components/layoutComponents/Body";
+import Footer from "./components/layoutComponents/Footer";
+import Header from "./components/layoutComponents/Header";
+import Sidebar from "./components/layoutComponents/Sidebar";
 
 function App() {
   return (

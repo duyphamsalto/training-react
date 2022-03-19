@@ -1,0 +1,24 @@
+@import "components/variable/";
+
+.side-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid #e9ecef;
+  &:first-child li {
+    background: #3a57e8;
+    color: #fff;
+  }
+  > p {
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.8rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #adb5bd;
+  }
+  ul {
+    margin: 0 0 0 1rem;
+    padding: 0;
+  }
+}
