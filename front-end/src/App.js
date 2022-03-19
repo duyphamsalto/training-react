@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Post from "./components/Content/Post/Post";
 import User from "./components/Content/User/User";
