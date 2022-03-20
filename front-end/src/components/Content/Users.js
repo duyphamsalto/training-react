@@ -13,7 +13,6 @@ export default function Users() {
     );
 
 
-
     let columns = [];
     const t = 10;
     for (let i = 0; i < t; i++) {
