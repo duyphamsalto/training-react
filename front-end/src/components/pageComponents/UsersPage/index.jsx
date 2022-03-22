@@ -1,19 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.scss";
 import UserRow from "../../partsComponents/UserRow";
 
-// useEffect(() => {
-//   getData();
-// }, []);
-const datas = [
-  { id: 1, name: "Text line", email: "Text line", status: true },
-  { id: 2, name: "Text line", email: "Text line", status: false },
-  { id: 3, name: "Text line", email: "Text line", status: false },
-  { id: 4, name: "Text line", email: "Text line", status: true },
-  { id: 5, name: "Text line", email: "Text line", status: true },
-];
-
 export default function UsersPage() {
+  const token = "19|XwOJ458hxmaWD4NqI0lYMk9zWx2mUx44SGZyKp5K";
+
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    async function fetchCardData() {
+      const url = "https://api.duypham.vn/api/v1/users";
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      const json = await res.json();
+      console.log(json.data);
+      setUsers(json.data);
+    }
+    fetchCardData();
+    console.log(users);
+  }, []);
   return (
     <>
       <div className="UsersPage">
@@ -31,13 +41,13 @@ export default function UsersPage() {
             </tr>
           </thead>
           <tbody>
-            {datas.map((data) => {
+            {users.map((user) => {
               return (
                 <UserRow
-                  key={data.id}
-                  name={data.name}
-                  email={data.email}
-                  status={data.status}
+                  key={user.id}
+                  name={user.name}
+                  email={user.email}
+                  status={user.status}
                 />
               );
             })}
