@@ -3,15 +3,29 @@ import "./style.scss";
 import Card from "../../partsComponents/Card";
 
 export default function PostPage() {
-  const url = "https://jsonplaceholder.typicode.com/todos/";
+  const url = "https://api.duypham.vn/api/v1/login";
+  const data = [
+    {
+      email: "akihiro.fukabe@salto.link",
+      password: "123456",
+    },
+  ];
 
   const [cards, setCards] = useState([]);
   useEffect(() => {
     async function getCardData() {
-      const res = await fetch(url);
+      const res = await fetch(url, {
+        method: "post",
+        header: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log(res);
       const json = await res.json();
-      const sliced = json.slice(0, 30);
-      setCards(sliced);
+      console.log(json);
+      // const sliced = json.slice(0, 30);
+      // setCards(sliced);
     }
     getCardData();
   }, []);
