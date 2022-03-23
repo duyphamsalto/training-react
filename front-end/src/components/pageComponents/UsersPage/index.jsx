@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
 import UserRow from "../../partsComponents/UserRow";
+import { API } from "configs/constant";
 
 export default function UsersPage() {
   const token = "19|XwOJ458hxmaWD4NqI0lYMk9zWx2mUx44SGZyKp5K";
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    async function fetchCardData() {
-      const url = "https://api.duypham.vn/api/v1/users";
+    async function fetchUserData() {
+      const url = API.USER.GET;
       const res = await fetch(url, {
         method: "GET",
         headers: {
@@ -18,11 +19,9 @@ export default function UsersPage() {
         },
       });
       const json = await res.json();
-      console.log(json.data);
       setUsers(json.data);
     }
-    fetchCardData();
-    console.log(users);
+    fetchUserData();
   }, []);
   return (
     <>
