@@ -4,7 +4,6 @@ export const CONSTANT = {
   TIME_OUT: +APP_ENV.REACT_APP_TIME_OUT,
 };
 
-
 export const API = {
   csrf: `${CONSTANT.API}/sanctum/csrf-cookie`,
   USER: {
@@ -13,6 +12,6 @@ export const API = {
     LOGOUT: `${CONSTANT.API}/api/v1/logout`,
   },
   POST: {
-    GET: `${CONSTANT.API}/api/v1/posts`
-  }
+    GET: `${CONSTANT.API}/api/v1/posts`,
+  },
 };

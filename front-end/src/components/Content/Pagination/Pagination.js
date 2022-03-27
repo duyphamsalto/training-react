@@ -1,22 +1,27 @@
 import React from "react";
 import "./style.scss";
+export default function Pagination(props) {
+  const { page, onChange } = props;
 
-export default function Pagination() {
+  function onPageChange(props) {
+    onChange(page);
+  }
+
   return (
-<div class="pager">
-  <ul class="pagination">
-      <li class="pre"><a href="#"><span>«</span></a></li>
-      <li><a href="#"><span>1</span></a></li>
-      <li><a href="#"><span>…</span></a></li>
-      <li><a href="#"><span>4</span></a></li>
-      <li><a href="#"><span>5</span></a></li>
-      <li><a href="#"class="active"><span>6</span></a></li>
-      <li><a href="#"><span>7</span></a></li>
-      <li><a href="#"><span>8</span></a></li>
-      <li><a href="#"><span>…</span></a></li>
-      <li><a href="#"><span>20</span></a></li>
-      <li class="next"><a href="#"><span>»</span></a></li>
-  </ul>
-  </div>
+    <div className="pager">
+      <ul className="pagination">
+        <li className="pre">
+          <a href="#">
+            <span>≪</span>
+          </a>
+        </li>
+        <li>
+          <a onClick={() => onPageChange(1)}>1</a>
+        </li>
+        <li>
+          <a onClick={() => onPageChange(2)}>2</a>
+        </li>
+      </ul>
+    </div>
   );
 }

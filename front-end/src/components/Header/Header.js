@@ -27,7 +27,7 @@ export default function Header() {
         <img src={"./images/Group.png"} />
       </div>
       <div className="header-person-icon">
-        <img src={"./images/Beared Guy02-min 1.png"} />
+        <img src={"./images/Beared.png"} />
       </div>
       <div className="header-person">
         <div className="last-name">Taisei</div>
