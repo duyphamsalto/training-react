@@ -4,7 +4,6 @@ import "./style.scss";
 import PostPage from "../../pageComponents/PostsPage";
 import UsersPage from "../../pageComponents/UsersPage";
 import Current from "../../partsComponents/Current";
-import Pagenation from "../../partsComponents/Pagination";
 import NotFind from "../../pageComponents/NotFindPage";
 
 export default function Body() {
@@ -17,7 +16,6 @@ export default function Body() {
         <Route path="/Users" element={<UsersPage />} />
         <Route path="*" element={<NotFind />} />
       </Routes>
-      <Pagenation current={6} />
     </div>
   );
 }

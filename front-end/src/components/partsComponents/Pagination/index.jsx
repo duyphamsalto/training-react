@@ -25,12 +25,15 @@ function getPagenationArr(c, m) {
 }
 
 export default function Pagenation(props) {
-  const arr = getPagenationArr(props.current, 20);
+  const arr = getPagenationArr(props.current, props.last);
 
+  function pageChange(num) {
+    props.parentFunction(num);
+  }
   return (
     <>
       <div className="Pagenation">
-        <p>Total 85 items</p>
+        <p>Total {props.total} items</p>
         <p className="Pagenation-inner">
           <a href={`/demo/page${props.current - 1}`}>
             <span>&lt;</span>
@@ -38,7 +41,11 @@ export default function Pagenation(props) {
           {arr.map((i, index) => {
             if (i === props.current)
               return (
-                <span key={index} className="current">
+                <span
+                  key={index}
+                  className="current"
+                  onClick={() => pageChange(i)}
+                >
                   {i}
                 </span>
               );
@@ -49,7 +56,7 @@ export default function Pagenation(props) {
                 </span>
               );
             const el = (
-              <a key={index} href={`/demo/page${i}`}>
+              <a key={index} onClick={() => pageChange(i)}>
                 <span>{i}</span>
               </a>
             );
