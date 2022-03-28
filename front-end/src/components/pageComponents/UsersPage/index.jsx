@@ -44,6 +44,7 @@ export default function UsersPage() {
               return (
                 <UserRow
                   key={user.id}
+                  id={user.id}
                   name={user.name}
                   email={user.email}
                   status={user.status}

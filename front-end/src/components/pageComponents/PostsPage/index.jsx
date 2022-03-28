@@ -21,6 +21,7 @@ export default function PostPage() {
           return (
             <Card
               key={card.id}
+              id={card.id}
               title={card.title}
               fileName={card.thumbnailUrl}
               desc={card.desc}

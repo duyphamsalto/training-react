@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
 import icon from "asset/row-icon.png";
+import { Link } from "react-router-dom";
 
 export default function UserRow(props) {
   return (
@@ -16,9 +17,9 @@ export default function UserRow(props) {
         <td>{props.email}</td>
         <td>{props.status ? "Active" : "Un active"}</td>
         <td>
-          <a href={`/id_${props.id}/publich`}>Publich</a>
-          <a href={`/id_${props.id}/edit`}>Edit</a>
-          <a href={`/id_${props.id}/delete`}>Delete</a>
+          <Link to={`/user_${props.id}/publich`}>Publich</Link>
+          <Link to={`/user_${props.id}/edit`}>Edit</Link>
+          <Link to={`/user_${props.id}/delete`}>Delete</Link>
         </td>
       </tr>
     </>
