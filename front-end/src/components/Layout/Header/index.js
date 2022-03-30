@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
 import './index.scss';
 import iconNotification from '../../../assets/images/icons/icon-notification.svg';
 import iconMessage from '../../../assets/images/icons/icon-message.svg';
@@ -9,15 +10,14 @@ import Avatar from '@mui/material/Avatar';
 import { pink } from '@mui/material/colors';
 
 export default function Header() {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userState = useSelector((state) => state.user);
+  const { info } = userState;
 
   async function handleLogout() {
-    const res = await fetchLogout();
-    if (res.isOk) {
-      return navigate('/login');
-    }
+    await fetchLogout(dispatch);
   }
-
+  console.log('%c RENDER HEADER', 'color: orange; font-size: 20px');
   return (
     <div className='header'>
       <div className='search-box'>
@@ -30,8 +30,8 @@ export default function Header() {
           <div className='avatar'>
           </div>
           <div className='user-info'>
-            <span>Duy Pham</span>
-            <span>Administrator</span>
+            <span>{info?.user?.name}</span>
+            <span>{info?.user?.email}</span>
           </div>
           <div className='d-flex ms-3'>
             <Avatar sx={{ bgcolor: pink[500], width: 30, height: 30, cursor: 'pointer' }}>
