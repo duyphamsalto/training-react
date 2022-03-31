@@ -2,14 +2,13 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from 'features/counter/counterSlice';
-import { setToken, toggleIcon } from 'features/users/userSlice';
+import { toggleIcon } from 'features/users/userSlice';
 
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Chip from '@mui/material/Chip';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
 export default function Home() {
@@ -38,11 +37,10 @@ export default function Home() {
           </Button>
         </Grid>
       </Grid>
-      <Grid container spacing={2} columns={16} sx={{ mt: 3}}>
+      <Grid container spacing={2} columns={16} sx={{ mt: 3 }}>
         <Grid item xs={3}>
-          <TextField required margin="normal" label="Input Username" color="secondary" onChange={(e) => dispatch(setToken(e.target.value))} />
-            <Button variant="outlined" startIcon={<AddCircleIcon />} onClick={() => dispatch(toggleIcon())}>
-            { user.isShowIcon ? 'Hide Icon' : 'Show Icon'}
+          <Button variant="outlined" startIcon={<AddCircleIcon />} onClick={() => dispatch(toggleIcon())}>
+            {user.isShowIcon ? 'Hide Icon' : 'Show Icon'}
           </Button>
         </Grid>
       </Grid>

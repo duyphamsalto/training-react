@@ -18,14 +18,15 @@ export default function User() {
     await fetchLogout(dispatch);
   }
 
-  return (
-    <div className='icon'>
-      {
-        !isShowIcon ? <div className='avatar'></div> : <Avatar sx={{ bgColor: pink[500], width: 30, height: 30, cursor: 'pointer' }}>
+  function showIcon() {
+    return !isShowIcon ? <div className='avatar'></div> : <Avatar sx={{ bgColor: pink[500], width: 30, height: 30, cursor: 'pointer' }}>
           <AccountCircleIcon fontSize="small" sx={{ color: pink[500] }} onClick={handleLogout} />
         </Avatar>
-      }
+  }
 
+  return (
+    <div className='icon'>
+      {showIcon()}
       <div className='user-info'>
         <span>{info?.user?.name}</span>
         <span>{info?.user?.email}</span>
