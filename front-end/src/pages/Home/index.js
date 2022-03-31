@@ -2,35 +2,50 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from 'features/counter/counterSlice';
-import { setToken } from 'features/users/userSlice';
+import { setToken, toggleIcon } from 'features/users/userSlice';
+
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Chip from '@mui/material/Chip';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 
 export default function Home() {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counter.value);
-  const token = useSelector((state) => state.user.token);
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     document.title = "React training";
   });
-
+  console.log('%c RENDER Home Component', 'color: orange; font-size: 20px');
   return (
-    <div>
-      <button
-        aria-label="Increment value"
-        onClick={() => dispatch(increment())}
-      >
-        Increment
-      </button>
-      <span>{count}</span>
-      <button
-        aria-label="Decrement value"
-        onClick={() => dispatch(decrement())}
-      >
-        Decrement
-      </button>
-      <h2>Token: {token}</h2>
-      <button aria-label="Set Token" onClick={() => dispatch(setToken())}>Decrement
-      </button>
-    </div>
+    <Box>
+      <Grid container spacing={2} columns={16}>
+        <Grid item xs={2}>
+          <Button variant="contained" endIcon={<RemoveCircleIcon />} onClick={() => dispatch(decrement())}>
+            Decrement
+          </Button>
+        </Grid>
+        <Grid item xs={2} display="flex" justifyContent="center">
+          <Chip label={`Count: ${count}`} color="secondary" size="medium" />
+        </Grid>
+        <Grid item xs={2}>
+          <Button variant="outlined" startIcon={<AddCircleIcon />} onClick={() => dispatch(increment())}>
+            Increment
+          </Button>
+        </Grid>
+      </Grid>
+      <Grid container spacing={2} columns={16} sx={{ mt: 3}}>
+        <Grid item xs={3}>
+          <TextField required margin="normal" label="Input Username" color="secondary" onChange={(e) => dispatch(setToken(e.target.value))} />
+            <Button variant="outlined" startIcon={<AddCircleIcon />} onClick={() => dispatch(toggleIcon())}>
+            { user.isShowIcon ? 'Hide Icon' : 'Show Icon'}
+          </Button>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }

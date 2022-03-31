@@ -4,7 +4,8 @@ const initialState = {
   info: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null,
   error: {},
   isProcessing: false,
-  isLogged: false
+  isLogged: false,
+  isShowIcon: false,
 };
 
 export const userSlice = createSlice({
@@ -31,10 +32,11 @@ export const userSlice = createSlice({
       localStorage.removeItem('user');
       window.location = '/login';
     },
-    setToken: (state) => { state.token = "Test token"; }
+    setToken: (state, action) => { state.token = action.payload; },
+    toggleIcon: (state) => { state.isShowIcon = !state.isShowIcon}
   }
 });
 
-export const { loginStart, loginSuccess, loginFail, logout, setToken } = userSlice.actions;
+export const { loginStart, loginSuccess, loginFail, logout, setToken, toggleIcon } = userSlice.actions;
 
 export default userSlice.reducer;
