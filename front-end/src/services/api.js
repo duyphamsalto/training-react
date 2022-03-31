@@ -3,8 +3,8 @@ import { CONSTANT } from "../configs/constant";
 export const TIME_OUT = CONSTANT.TIME_OUT;
 
 export function authHeader() {
-  const token = localStorage.getItem("token");
-  return token ? { Authorization: `Bearer ${token}` } : {};
+  const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
+  return user ? { Authorization: `Bearer ${user.token}` } : {};
 }
 
 function getHeader() {
