@@ -1,0 +1,14 @@
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  span {
+    line-height: 20px;
+    &:first-child {
+      font-weight: bold;
+    }
+    &:last-child {
+      font-size: 12px;
+    }
+  }
+}
