@@ -5,6 +5,7 @@ import PostPage from "../../pageComponents/PostsPage";
 import UsersPage from "../../pageComponents/UsersPage";
 import Current from "../../partsComponents/Current";
 import NotFind from "../../pageComponents/NotFindPage";
+import Dashboard from "../../pageComponents/DashboardPage";
 
 export default function Body() {
   return (
@@ -12,6 +13,7 @@ export default function Body() {
       <Current />
       <Routes>
         <Route path="/" element={<PostPage />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Posts" element={<PostPage />} />
         <Route path="/Users" element={<UsersPage />} />
         <Route path="*" element={<NotFind />} />
