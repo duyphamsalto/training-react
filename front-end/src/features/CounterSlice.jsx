@@ -16,6 +16,7 @@ export const counterSlice = createSlice({
       state.value -= 1;
     },
     incrementByAmount: (state, action) => {
+      console.log(action);
       state.value += action.payload;
     },
     callLog: (state) => {
@@ -27,6 +28,7 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { increment, decrement, callLog, toggle } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount, callLog, toggle } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;
