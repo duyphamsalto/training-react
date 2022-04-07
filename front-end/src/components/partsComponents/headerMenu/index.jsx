@@ -1,21 +1,17 @@
 import React from "react";
 import "./style.scss";
-import icon1 from "../../../asset/Ellipse.png";
-import icon2 from "../../../asset/Notification.png";
-import icon3 from "../../../asset/Group.png";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 export default function headerMenu() {
   return (
     <>
       <ul className="icons">
         <li className="icon">
-          <img src={icon1} alt="" />
+          <NotificationsActiveIcon fontSize="large" />
         </li>
         <li className="icon">
-          <img src={icon2} alt="" />
-        </li>
-        <li className="icon">
-          <img src={icon3} alt="" />
+          <MailOutlineIcon fontSize="large" />
         </li>
       </ul>
     </>
