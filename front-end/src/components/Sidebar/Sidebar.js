@@ -1,4 +1,6 @@
 import './Sidebar.css';
+import { Link } from "react-router-dom";
+
 
 const Sidebar = (props) => {
   return (
@@ -11,12 +13,16 @@ const Sidebar = (props) => {
         <hr />
         <p>Main</p>
         <div className="main-users">
+        <Link to="/Users">
           <img src={"./images/3User.png"} width={20} alt="ユーザーズアイコン" />
           <span>　Users</span>
+          </Link>
         </div>
         <div className="side-elements">
+        <Link to="/">
           <img src={"./images/Game.png"} width={20} alt="投稿アイコン" />
           <span>　Posts</span>
+          </Link>
         </div>
         <div className="side-elements">
           <img src={"./images/Categories.png"} width={20} alt="カテゴリーアイコン" />

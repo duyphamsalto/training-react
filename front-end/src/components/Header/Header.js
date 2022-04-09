@@ -1,6 +1,7 @@
 import './Header.css';
 
-const Header = (props) => {
+export default function Header() {
+
     return (
         <header>
             <div className="flex__row">
@@ -31,5 +32,3 @@ const Header = (props) => {
         </header>
     );
 }
-
-export default Header;
