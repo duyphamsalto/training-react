@@ -2,22 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { store } from "./store";
 import { Provider } from "react-redux";
 import App from "./App";
-import Login from "./components/layoutComponents/Login";
+import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { green, pink } from "@mui/material/colors";
+// import { blue, pink } from "@mui/material/colors";
 
 const myTheme = createTheme({
   palette: {
-    primary: {
-      main: green[600],
-    },
-    secondary: {
-      main: pink[100],
-    },
+    // primary: {
+    //   main: blue[100],
+    // },
+    // secondary: {
+    //   main: pink[300],
+    // },
   },
 });
 
@@ -25,11 +25,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={myTheme}>
+        <CssBaseline />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+          <App />
         </BrowserRouter>
       </ThemeProvider>
     </Provider>
