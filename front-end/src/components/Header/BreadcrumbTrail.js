@@ -6,7 +6,6 @@ export default function BreadcrumbTrail() {
   // URLパスを取得
   const location = useLocation();
   const urlPath = location.pathname.slice(1).split('/');
-  console.log(urlPath);
 
   // 文字列の先頭を大文字にする処理
   const capitalize = function(str) {
@@ -21,8 +20,8 @@ export default function BreadcrumbTrail() {
           <img src={`${process.env.PUBLIC_URL}/image/icon-wrapper-h.png`} alt='icon-wrapper-h' />
           &nbsp;<Link to='/'>Home</Link>
         </li>
-        {urlPath.map((path) => (
-          <li>
+        {urlPath.map((path, index) => (
+          <li key={index}>
             <NavLink to={`/${path}`}>{capitalize(path)}</NavLink>
           </li>
         ))}

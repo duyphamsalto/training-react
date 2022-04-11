@@ -13,7 +13,7 @@ export default function SideContents(props) {
     <div className="sidebar__content">
       <div className='sidebar__content__title'>{capitalize(props.title)}</div>
       {props.block.map((b) => (
-        <div className={`sidebar__content__block ${b}`}>
+        <div className={`sidebar__content__block ${b}`} key={b}>
           <NavLink to={`/${b}`} className={({isActive}) => (isActive ? 'activated':'')}>
             <img src={`${process.env.PUBLIC_URL}/image/${capitalize(b)}.png`} alt={b} />
             {capitalize(b)}
