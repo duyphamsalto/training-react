@@ -2,18 +2,17 @@ import './Users.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { API } from '../../configs/constant';
-// import Pagination from './paginate';
-import ReactPaginate from 'react-paginate';
+import Pagination from '@mui/material/Pagination';
 
 
 export default function Users() {
     const [users, setUsers] = useState([]);
     const [page, setPage] = useState(1);
+    const [totalPage, setTotalPage] = useState();
     const token = localStorage.getItem("token");
     const APP_ENV = process.env;
     const EMAIL = APP_ENV.EMAIL;
     const PASS = APP_ENV.PASS
-    const [data, setData] = useState();
 
 
 
@@ -43,19 +42,16 @@ export default function Users() {
                 }
             });
             const user = await res.json();
-            // console.log(user.last_page);
-            console.log(user.total);
-            // console.log(user.current_page);
+            console.log(user.last_page);
+            console.log(user);
             setUsers(user.data);
-            setData(user);
+            setTotalPage(user.last_page)
+            setPage(user.current_page)
         }
 
         fetchData();
     }, [page]);
 
-    function onPageChange(page) {
-        setPage(page);
-    }
 
     const columns = (
         users.map((item, idx) =>
@@ -89,29 +85,7 @@ export default function Users() {
                         {columns}
                     </tbody>
                 </table>
-                <nav aria-label="Page navigation comments" className="mt-4">
-                    <ReactPaginate
-                        // pageCount={Math.ceil(data.total / 15)} //総ページ数。今回は一覧表示したいデータ数 / 1ページあたりの表示数としてます。
-                        pageCount={68} //総ページ数。今回は一覧表示したいデータ数 / 1ページあたりの表示数としてます。
-                        marginPagesDisplayed={2} //先頭と末尾に表示するページの数。今回は2としたので1,2…今いるページの前後…後ろから2番目, 1番目 のように表示されます。
-                        pageRangeDisplayed={5} //上記の「今いるページの前後」の番号をいくつ表示させるかを決めます。
-                        onPageChange={onPageChange} //ページネーションのリンクをクリックしたときのイベント(詳しくは下で解説します)
-                        // containerClassName='pagination' //ページネーションリンクの親要素のクラス名
-                        // pageClassName='page-item' //各子要素(li要素)のクラス名
-                        // pageLinkClassName='page-link' //ページネーションのリンクのクラス名
-                        // activeClassName='active' //今いるページ番号のクラス名。今いるページの番号だけ太字にしたりできます 
-                        previousLabel='<' //前のページ番号に戻すリンクのテキスト
-                        nextLabel='>' //次のページに進むボタンのテキスト
-                        // previousClassName='page-item' // '<'の親要素(li)のクラス名
-                        // nextClassName='page-item' //'>'の親要素(li)のクラス名
-                        // previousLinkClassName='page-link'  //'<'のリンクのクラス名
-                        // nextLinkClassName='page-link' //'>'のリンクのクラス名
-                        disabledClassName='disabled' //先頭 or 末尾に行ったときにそれ以上戻れ(進め)なくするためのクラス
-                        breakLabel='...' // ページがたくさんあるときに表示しない番号に当たる部分をどう表示するか
-                        // breakClassName='page-item' // 上記の「…」のクラス名
-                        // breakLinkClassName='page-link' // 「…」の中のリンクにつけるクラス
-                    />
-                </nav>
+                <Pagination count={totalPage} boundaryCount={2} page={page}  onChange={(e, page) =>setPage(page)} />
             </div>
         </>
     );
