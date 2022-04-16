@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-function getPagenationArr(c, m) {
+function getPaginationArr(c, m) {
   var current = c,
     last = m,
     delta = 2,
@@ -24,18 +24,16 @@ function getPagenationArr(c, m) {
   return rangeWithDots;
 }
 
-export default function Pagenation(props) {
-  console.log("props", props);
-  const arr = getPagenationArr(props.current, props.last);
-
+export default function Pagination(props) {
+  const arr = getPaginationArr(props.current, props.last);
   function changePage(num) {
     props.parentFunction(num);
   }
   return (
     <>
-      <div className="Pagenation">
+      <div className="Pagination">
         <p>Total {props.total} items</p>
-        <p className="Pagenation-inner">
+        <p className="Pagination-inner">
           <span onClick={() => changePage(props.current - 1)}>&lt;</span>
           {arr.map((i, index) => {
             if (i === props.current)
