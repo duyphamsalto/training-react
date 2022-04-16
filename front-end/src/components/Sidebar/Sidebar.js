@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useCallback } from 'react';
-import { Link, useParams } from "react-router-dom";
 import './style.scss';
 
 import SideContents from './SideContents/SideContents'
