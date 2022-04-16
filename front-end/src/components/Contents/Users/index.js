@@ -3,7 +3,6 @@ import { API } from '../../configs/constant.js';
 import './style.scss';
 
 import MuiPagination from '@material-ui/lab/Pagination';
-import { withStyles } from '@material-ui/core/styles';
 
 export default function Users() {
   const [data, setData] = useState([]);
