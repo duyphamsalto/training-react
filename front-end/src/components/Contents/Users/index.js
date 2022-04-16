@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
-
 import { API } from '../../configs/constant.js';
 import './style.scss';
 
+import MuiPagination from '@material-ui/lab/Pagination';
+import { withStyles } from '@material-ui/core/styles';
+
 export default function Users() {
   const [data, setData] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [page, setPage] = useState(1);
   const token = "21|vpkaXAFUcNm6jDdIKeuP4BvWLTKReNmw1gMzAl71";
 
   useEffect(() => {
     async function fetchUsersData(){
-      const url = API.USER.GET;
+      const url = `${API.USER.GET}?page=${page}`;
+      console.log(url);
       const result = await fetch(url, {
         method: 'GET',
         headers: {
@@ -20,9 +25,12 @@ export default function Users() {
       });
       const users = await result.json();
       setData(users.data);
+      setUsers(users);
+      console.log(users);
     }
     fetchUsersData();
-  }, []);
+  }, [page]);
+  console.log(data)
 
   return (
     <div id='users' className=''>
@@ -50,6 +58,12 @@ export default function Users() {
           </tr>
         ))}
       </table>
+      <MuiPagination 
+        count={users.last_page}
+        color="secondary"
+        onChange={(e, page) =>setPage(page)}
+        page={page}
+      />
     </div>
   );
 }
