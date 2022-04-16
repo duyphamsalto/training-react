@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.scss";
-import LogoutIcon from "@mui/icons-material/Logout";
+
 import Avatar from "@mui/material/Avatar";
 import { deepOrange } from "@mui/material/colors";
 import PersonIcon from "@mui/icons-material/Person";
@@ -34,14 +34,6 @@ export default function User(prop) {
           <h3>{prop.name}</h3>
           <p>Administrator</p>
         </div>
-        <LogoutIcon
-          fontSize="large"
-          sx={{
-            borderRadius: "2rem",
-            marginRight: "2rem",
-            background: "#ddd",
-          }}
-        />
       </div>
     </>
   );
