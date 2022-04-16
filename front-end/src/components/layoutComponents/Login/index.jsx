@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Box,
@@ -31,6 +31,10 @@ function Copyright() {
 
 export default function Login() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("loginState")) navigate("/");
+  }, []);
 
   const [email, setEmail] = useState({
     errState: false,
@@ -69,10 +73,12 @@ export default function Login() {
     if (!isCheck()) return;
     try {
       const result = await isLogin(values);
-      if (result) {
-        navigate("/");
-      } else {
+      if (!result) {
         throw new Error("入力情報に誤りがあります。");
+      } else {
+        localStorage.setItem("loginState", true);
+        localStorage.setItem("loggingInUser", JSON.stringify(result));
+        navigate("/");
       }
     } catch (err) {
       setEmail({ ...email, errState: true, errMsg: err.message });

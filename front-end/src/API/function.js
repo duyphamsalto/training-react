@@ -1,6 +1,8 @@
 import { API } from "./constant";
 
-const token = "19|XwOJ458hxmaWD4NqI0lYMk9zWx2mUx44SGZyKp5K";
+const token = localStorage.getItem("loggingInUser")
+  ? JSON.parse(localStorage.getItem("loggingInUser")).token
+  : null;
 
 export async function fetchCardData(setter) {
   const url = "https://jsonplaceholder.typicode.com/photos";
@@ -39,6 +41,6 @@ export async function isLogin(body) {
     },
     body: JSON.stringify(body),
   });
-  console.log(await res.json());
-  return res.ok && res.status === 200 ? true : false;
+  const token = await res.json();
+  return res.ok && res.status === 200 ? token : false;
 }
