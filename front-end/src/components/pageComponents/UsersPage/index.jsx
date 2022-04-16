@@ -2,37 +2,22 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import Pagination from "../../partsComponents/Pagination";
 import UserRow from "../../partsComponents/UserRow";
-import { API } from "configs/constant";
+import { fetchUserData } from "API/function";
 
 export default function UsersPage() {
-  const token = "19|XwOJ458hxmaWD4NqI0lYMk9zWx2mUx44SGZyKp5K";
-
-  const [users, setUsers] = useState([]);
-  const [current, setCurrent] = useState(1);
-  const [total, setTotal] = useState(0);
-  const [lastPage, setLastPage] = useState(0);
+  const [pageData, setPageData] = useState({
+    users: [],
+    current: 1,
+    total: 0,
+    lastPage: 0,
+  });
 
   useEffect(() => {
-    async function fetchUserData() {
-      const url = `${API.USER.GET}?page=${current}`;
-      const res = await fetch(url, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
-      const json = await res.json();
-      setUsers(json.data);
-      setTotal(json.total);
-      setLastPage(json.last_page);
-    }
-    fetchUserData();
-  }, [current]);
+    fetchUserData(pageData, setPageData);
+  }, [pageData.current]);
 
   function changePage(p) {
-    setCurrent(p);
+    setPageData({ ...pageData, current: p });
   }
 
   return (
@@ -52,7 +37,7 @@ export default function UsersPage() {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => {
+            {pageData.users.map((user) => {
               return (
                 <UserRow
                   key={user.id}
@@ -67,9 +52,9 @@ export default function UsersPage() {
         </table>
       </div>
       <Pagination
-        current={current}
-        total={total}
-        last={lastPage}
+        current={pageData.current}
+        total={pageData.total}
+        last={pageData.lastPage}
         parentFunction={changePage}
       />
     </>

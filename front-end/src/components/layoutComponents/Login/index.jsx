@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Box,
@@ -12,6 +12,9 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import SendIcon from "@mui/icons-material/Send";
+import { useNavigate } from "react-router-dom";
+
+import { isLogin } from "API/function";
 
 function Copyright() {
   return (
@@ -27,6 +30,55 @@ function Copyright() {
 }
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState({
+    errState: false,
+    errMsg: "必須：メールアドレスを入力してください。",
+  });
+
+  const [password, setPassword] = useState({
+    errState: false,
+    errMsg: "必須：パスワードを入力してください。",
+  });
+
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  function isCheck() {
+    if (values.email === "" || values.password === "") {
+      values.email === ""
+        ? setEmail({ ...email, errState: true })
+        : setEmail({ ...email, errState: false });
+      values.password === ""
+        ? setPassword({ ...password, errState: true })
+        : setPassword({ ...password, errState: false });
+      return false;
+    }
+    return true;
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  }
+
+  async function handleSend() {
+    if (!isCheck()) return;
+    try {
+      const result = await isLogin(values);
+      if (result) {
+        navigate("/");
+      } else {
+        throw new Error("入力情報に誤りがあります。");
+      }
+    } catch (err) {
+      setEmail({ ...email, errState: true, errMsg: err.message });
+      setPassword({ ...password, errState: true, errMsg: err.message });
+    }
+  }
   return (
     <>
       <Container
@@ -64,6 +116,11 @@ export default function Login() {
               type="email"
               label="Email Address"
               variant="outlined"
+              name="email"
+              value={values.email}
+              error={email.errState}
+              helperText={email.errState ? email.errMsg : ""}
+              onChange={(e) => handleChange(e)}
             />
             <TextField
               required
@@ -72,6 +129,11 @@ export default function Login() {
               label="Password"
               variant="outlined"
               fullWidth
+              name="password"
+              value={values.password}
+              error={password.errState}
+              helperText={password.errState ? password.errMsg : ""}
+              onChange={(e) => handleChange(e)}
             />
             <Button
               variant="contained"
@@ -79,6 +141,7 @@ export default function Login() {
               endIcon={<SendIcon />}
               fullWidth
               sx={{ fontSize: 14 }}
+              onClick={() => handleSend()}
             >
               SIGN IN
             </Button>
