@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../../../features/CounterSlice";
+import { decrement, increment, toggle } from "../../../features/CounterSlice";
 
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -13,6 +13,7 @@ const CustomButton = styled(Button)({
 });
 
 export default function Counter() {
+  const showState = useSelector((state) => state.counter.isShow);
   const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
   return (
@@ -42,13 +43,24 @@ export default function Counter() {
         </Button>
       </Stack>
       <Stack spacing={8} direction="row" mt={2}>
-        <Button
-          variant="outlined"
-          onClick={() => dispatch()}
-          startIcon={<AddCircleIcon />}
-        >
-          SHOW ICON
-        </Button>
+        {showState ? (
+          <Button
+            color="secondary"
+            variant="outlined"
+            onClick={() => dispatch(toggle())}
+            startIcon={<RemoveCircleIcon />}
+          >
+            HIDE ICON
+          </Button>
+        ) : (
+          <Button
+            variant="outlined"
+            onClick={() => dispatch(toggle())}
+            startIcon={<AddCircleIcon />}
+          >
+            SHOW ICON
+          </Button>
+        )}
       </Stack>
     </div>
   );

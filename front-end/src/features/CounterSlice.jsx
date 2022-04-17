@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: 100,
-  bool: false,
+  isShow: false,
 };
 
 export const counterSlice = createSlice({
@@ -15,20 +15,12 @@ export const counterSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
-    incrementByAmount: (state, action) => {
-      console.log(action);
-      state.value += action.payload;
-    },
-    callLog: (state) => {
-      console.log(state);
-    },
     toggle: (state) => {
-      state.bool = !state.bool;
+      state.isShow = !state.isShow;
     },
   },
 });
 
-export const { increment, decrement, incrementByAmount, callLog, toggle } =
-  counterSlice.actions;
+export const { increment, decrement, toggle } = counterSlice.actions;
 
 export default counterSlice.reducer;
