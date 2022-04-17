@@ -1,8 +1,11 @@
 import { API } from "./constant";
 
-const token = localStorage.getItem("loggingInUser")
-  ? JSON.parse(localStorage.getItem("loggingInUser")).token
-  : null;
+function getToken() {
+  const token = localStorage.getItem("loggingInUser")
+    ? JSON.parse(localStorage.getItem("loggingInUser")).token
+    : null;
+  return token;
+}
 
 export async function fetchCardData(setter) {
   const url = "https://jsonplaceholder.typicode.com/photos";
@@ -12,6 +15,7 @@ export async function fetchCardData(setter) {
 }
 
 export async function fetchUserData(dataObj, setter) {
+  const token = getToken();
   const url = `${API.USER.GET}?page=${dataObj.current}`;
   const res = await fetch(url, {
     method: "GET",

@@ -43,11 +43,12 @@ header {
       100%;
     display: inline-block;
     position: absolute;
-    top: 8px;
+    top: 12px;
     left: 5px;
   }
 
   .search_box input {
     padding: 0.5rem 0 0.5rem 2em;
+    vertical-align: middle;
   }
 }
