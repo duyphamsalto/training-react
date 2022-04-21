@@ -7,6 +7,17 @@ import { useEffect } from 'react';
 import { API } from '../../configs/constant';
 import { fetchAsGet } from '../../services/api';
 import Progress from '../commons/Progress';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DoneIcon from '@mui/icons-material/Done';
+import Box from '@mui/material/Box';
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
@@ -33,214 +44,44 @@ export default function UserList() {
   return (
     <div>
       {isLoading && <Progress />}
-      <table className='table table-striped table-hover table-bordered table-responsive'>
-        <thead>
-          <tr>
-            <th scope="col" className=''>#</th>
-            <th scope="col" className=''>User Name</th>
-            <th scope="col" className=''>Email</th>
-            <th scope="col" className=''>Status</th>
-            <th scope="col" className='text-center user-action'>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            users && users.map((item, idx) =>
-              <tr key={idx}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>Waiting</td>
-                <td className='d-flex justify-content-around'>
-                  <button type="button" className="btn btn-outline-success btn-sm mx-2">Publish</button>
-                  <button type="button" className="btn btn-outline-info btn-sm mx-2">Edit</button>
-                  <button type="button" className="btn btn-outline-danger btn-sm mx-2">Delete</button>
-                </td>
-              </tr>
-            )
-          }
-        </tbody>
-      </table>
-
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>#</TableCell>
+              <TableCell>User Name</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Status</TableCell>
+              <TableCell width={100}>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {users.map((row, idx) =>
+              <TableRow
+                key={idx}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.id}
+                </TableCell>
+                <TableCell>{row.name}</TableCell>
+                <TableCell>{row.email}</TableCell>
+                <TableCell>Waiting</TableCell>
+                <TableCell align="center">
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <DoneIcon color="success"/>
+                    <EditIcon color="secondary"/>
+                    <DeleteIcon color="error" />
+                  </Box>
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
       <Stack spacing={2} direction="row" justifyContent="flex-end">
         <Pagination count={totalPage} />
       </Stack>
     </div>
   );
 }
-
-const data = [
-  {
-    "id": 1,
-    "name": "Admin",
-    "email": "admin@gmail.com",
-    "email_verified_at": "2022-03-03T17:11:16.000000Z",
-    "created_at": "2022-03-03T17:11:16.000000Z",
-    "updated_at": "2022-03-03T17:11:16.000000Z"
-  },
-  {
-    "id": 2,
-    "name": "Elvie O'Conner",
-    "email": "grover.lebsack@hahn.biz",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 3,
-    "name": "Mr. Jocelyn White",
-    "email": "dagmar.kirlin@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 4,
-    "name": "Jimmy Rodriguez",
-    "email": "ledner.anne@keeling.net",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 5,
-    "name": "Ara Adams",
-    "email": "egoyette@goodwin.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 6,
-    "name": "Lamont Quitzon",
-    "email": "clemmie.haley@nader.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 7,
-    "name": "Ms. Abbey McKenzie DVM",
-    "email": "lowell91@will.net",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 8,
-    "name": "Julius Feeney I",
-    "email": "bergnaum.kirstin@beatty.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 9,
-    "name": "Kiara Thompson",
-    "email": "jacobi.wanda@damore.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 10,
-    "name": "Prof. Tess Metz",
-    "email": "archibald47@runolfsson.info",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 11,
-    "name": "Adelle Dooley",
-    "email": "nquigley@heidenreich.org",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 12,
-    "name": "Macie Rosenbaum",
-    "email": "elwin14@oberbrunner.net",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 13,
-    "name": "Mrs. Lorine Price I",
-    "email": "sammie.gibson@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 14,
-    "name": "Prof. Hilma Abbott",
-    "email": "vandervort.fermin@eichmann.biz",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 15,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 16,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 17,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 18,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  },
-  {
-    "id": 19,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  }, {
-    "id": 20,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  }, {
-    "id": 21,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  }, {
-    "id": 22,
-    "name": "Ewald Feeney",
-    "email": "alittle@gmail.com",
-    "email_verified_at": "2022-03-06T14:45:41.000000Z",
-    "created_at": "2022-03-06T14:45:41.000000Z",
-    "updated_at": "2022-03-06T14:45:41.000000Z"
-  }
-];
