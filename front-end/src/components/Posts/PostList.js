@@ -7,7 +7,7 @@ import './post.scss';
 import PostCard from './PostCard';
 
 export default function PostList() {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading] = useState(true);
 
   const [data] = useState(Array(12).fill({
     name: 'Shrimp and Chorizo Paella',
