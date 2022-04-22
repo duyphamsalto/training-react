@@ -2,31 +2,33 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import routes from './routes';
 
-import Sidebar from './components/Sidebar/Sidebar';
-import Header from './components/Header/Header';
-import BreadcrumbTrail from './components/Header/BreadcrumbTrail';
-import Footer from './components/Footer/Footer';
+import Layout from './components/Comons/Layout';
 import './App.css';
 
 function App() {
+  routes.parents.map((route, idx) => (
+    console.log(route)
+  ))
   return (
-    <div className='container'>
-      <Sidebar />
-      <div className='contents'>
-        <Header />
-        <BreadcrumbTrail />
-        <Routes>
-          {routes.map((route, idx) => (
-            <Route
-              key={idx}
-              path={route.path}
-              element={route.component}
-            />
-          ))}
-        </Routes>
-        <Footer />
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        {routes.children.map((route, idx) => (
+          <Route
+            idx={idx}
+            index={route.index}
+            path={route.path}
+            element={route.component}
+          />
+        ))}
+      </Route>
+      {routes.parents.map((route, idx) => (
+        <Route
+          idx={idx}
+          path={route.path}
+          element={route.component}
+        />
+      ))}
+    </Routes>
   );
 }
 
