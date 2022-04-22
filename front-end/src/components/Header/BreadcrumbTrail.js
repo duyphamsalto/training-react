@@ -15,7 +15,7 @@ export default function BreadcrumbTrail() {
 
   return (
     <nav>
-      <ul>
+      <ul className="breadcrumbTrail">
         <li>
           <img src={`${process.env.PUBLIC_URL}/image/icon-wrapper-h.png`} alt='icon-wrapper-h' />
           &nbsp;<Link to='/'>Home</Link>
