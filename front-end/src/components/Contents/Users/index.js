@@ -25,7 +25,6 @@ export default function Users() {
       const users = await result.json();
       setData(users.data);
       setUsers(users);
-      console.log(users);
     }
     fetchUsersData();
   }, [page]);
@@ -60,6 +59,7 @@ export default function Users() {
       <MuiPagination 
         count={users.last_page}
         color="secondary"
+        variant="outlined"
         onChange={(e, page) =>setPage(page)}
         page={page}
       />
