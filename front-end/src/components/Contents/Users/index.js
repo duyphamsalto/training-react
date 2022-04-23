@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { API } from '../../configs/constant.js';
+import { API } from '../../../api/constant';
 import './style.scss';
 
 import MuiPagination from '@material-ui/lab/Pagination';
@@ -28,7 +28,6 @@ export default function Users() {
     }
     fetchUsersData();
   }, [page]);
-  console.log(data)
 
   return (
     <div id='users' className=''>

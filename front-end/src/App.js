@@ -6,9 +6,6 @@ import Layout from './components/Comons/Layout';
 import './App.css';
 
 function App() {
-  routes.parents.map((route, idx) => (
-    console.log(route)
-  ))
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
