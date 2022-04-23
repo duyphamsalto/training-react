@@ -1,7 +1,5 @@
-import Layout from './components/Comons/Layout';
 import NotFound from './components/Comons/NotFound';
 import Login from './components/Contents/Login';
-import Body from './components/Contents/Body';
 import Dashboard from './components/Contents/Dashboard';
 import Users from './components/Contents/Users';
 import Posts from './components/Contents/Posts';
@@ -23,7 +21,7 @@ const routes = {
   children: [{
     path: '/',
     index: true,
-    component: <Body />
+    component: <Dashboard />
   }, {
     path: '/dashboard',
     index: false,
