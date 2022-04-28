@@ -1,7 +1,20 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom"
+
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import './style.scss';
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  function logout() {
+    if(window.confirm("ログアウトしますか？")){
+      localStorage.removeItem("loginUserData");
+      navigate("/login");
+    }
+  }
+
   return (
     <header>
       <div className='search'>
@@ -18,6 +31,13 @@ export default function Header() {
             <span>橋本泰河</span>
             <span>Admin</span>
           </div>
+        </div>
+        <div className="contentBox__logout">
+          <Stack direction="row" spacing={2}>
+            <Button variant="outlined" color="error" onClick={() => logout()}>
+              Logout
+            </Button>
+          </Stack>
         </div>
       </div>
     </header>
